@@ -1,5 +1,7 @@
 package com.bordozer.guitarneckmaster.dto;
 
+import java.time.LocalDateTime;
+
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -14,4 +16,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public interface HealthStatusDto {
 
     String getStatus();
+
+    LocalDateTime getTime();
 }

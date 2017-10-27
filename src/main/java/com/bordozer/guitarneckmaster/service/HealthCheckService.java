@@ -4,8 +4,10 @@ import org.springframework.stereotype.Service;
 
 import com.bordozer.guitarneckmaster.dto.HealthStatusDto;
 
+import reactor.core.publisher.Mono;
+
 @Service
 public interface HealthCheckService {
 
-    HealthStatusDto getStatus();
+    Mono<HealthStatusDto> getStatus();
 }

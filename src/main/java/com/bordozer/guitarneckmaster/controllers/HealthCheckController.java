@@ -1,5 +1,6 @@
 package com.bordozer.guitarneckmaster.controllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +17,8 @@ public class HealthCheckController {
 
     private final HealthCheckService healthCheckService;
 
-    @GetMapping(path = "/health-check")
+    @GetMapping(path = "/health-check", produces = MediaType.APPLICATION_JSON_VALUE)
     public HealthStatusDto healthCheck() {
-        return healthCheckService.getStatus();
+        return healthCheckService.getStatus().block();
     }
 }
