@@ -1,0 +1,23 @@
+spring:
+  application:
+      name: guitar-neck-master
+
+logging:
+  level:
+    root: info
+---
+spring:
+  profiles: local
+
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8966
+
+

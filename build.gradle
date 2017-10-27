@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.bordozer'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+    hibernateVersion = '5.2.12.Final'
+    assertjVersion = '3.8.0'
+    mockitoVersion = '2.11.0'
+}
+
+dependencies {
+//	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+//	compile('org.springframework.boot:spring-boot-starter-data-rest')
+//  compile group: 'org.hibernate', name: 'hibernate-core', version: hibernateVersion
+
+    compileOnly('org.projectlombok:lombok:1.16.18')
+    compile('org.springframework.boot:spring-boot-starter-web')
+//    compile('org.springframework.boot:spring-boot-starter-jersey')
+//    compile group: 'io.reactivex', name: 'rxjava-reactive-streams', version: '1.2.1'
+
+    compile group: 'com.google.guava', name: 'guava', version: '21.0'
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile group: 'org.assertj', name: 'assertj-core', version: assertjVersion
+	testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
+
+}
