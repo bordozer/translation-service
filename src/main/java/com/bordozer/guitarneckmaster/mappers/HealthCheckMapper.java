@@ -8,6 +8,7 @@ import org.mapstruct.Mapping;
 import com.bordozer.guitarneckmaster.dto.ModifiableHealthStatusDto;
 import com.bordozer.guitarneckmaster.mappers.impl.MapstructImplPackage;
 import com.bordozer.guitarneckmaster.model.HealthStatus;
+import com.bordozer.guitarneckmaster.utils.DateTimeUtils;
 
 @Mapper(config = MapstructImplPackage.class)
 public interface HealthCheckMapper {
@@ -16,6 +17,6 @@ public interface HealthCheckMapper {
     ModifiableHealthStatusDto map(HealthStatus healthStatus);
 
     default LocalDateTime now() {
-        return LocalDateTime.now();
+        return DateTimeUtils.now();
     }
 }

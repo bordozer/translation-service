@@ -19,6 +19,7 @@ public class HealthCheckController {
 
     @GetMapping(path = "/health-check", produces = MediaType.APPLICATION_JSON_VALUE)
     public HealthStatusDto healthCheck() {
+        log.info("health-check is called");
         return healthCheckService.getStatus().block();
     }
 }
