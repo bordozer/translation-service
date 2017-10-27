@@ -11,23 +11,16 @@
  * the terms of the license.
  */
 
-package com.bordozer.guitarneckmaster.controllers;
+package com.bordozer.guitarneckmaster.mappers.impl;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.mapstruct.MapperConfig;
 
-import com.bordozer.guitarneckmaster.dto.HealthStatusDto;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
-import lombok.RequiredArgsConstructor;
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@MapperConfig(implementationPackage = MapstructImplPackage.NAME, componentModel = "spring")
+public final class MapstructImplPackage {
 
-@RestController
-@RequiredArgsConstructor
-public class GuitarNeckMasterController {
-
-    @GetMapping(path = "/health-check")
-    public HealthStatusDto healthCheck() {
-        return HealthStatusDto.builder()
-            .status("alive")
-            .build();
-    }
+    public static final String NAME = "com.bordozer.guitarneckmaster.mappers.impl";
 }

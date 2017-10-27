@@ -1,27 +1,17 @@
-/*
- * Copyright (c) 2017 CoreLogic, Inc. All Rights Reserved.
- *
- * This software is the confidential and proprietary information of CoreLogic, Inc.
- * It is furnished under license and may only be used or copied in accordance
- * with the terms of such license.
- * This software is subject to change without notice and no information
- * contained in it should be construed as commitment by CoreLogic, Inc.
- * CoreLogic, Inc. cannot accept any responsibility, financial or otherwise, for any
- * consequences arising from the use of this software except as otherwise stated in
- * the terms of the license.
- */
-
 package com.bordozer.guitarneckmaster.dto;
 
-import javax.validation.constraints.NotNull;
+import org.immutables.value.Value;
 
-import lombok.Builder;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-@Data
-@Builder
-public class HealthStatusDto {
+@JsonDeserialize(
+    builder = ImmutableHealthStatusDto.Builder.class
+)
+@JsonIgnoreProperties({ "initialized" })
+@Value.Immutable
+@Value.Modifiable
+public interface HealthStatusDto {
 
-    @NotNull
-    private String status;
+    String getStatus();
 }
