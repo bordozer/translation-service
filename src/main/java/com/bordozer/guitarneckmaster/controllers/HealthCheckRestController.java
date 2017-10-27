@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class HealthCheckController {
+public class HealthCheckRestController {
 
     private final HealthCheckService healthCheckService;
 

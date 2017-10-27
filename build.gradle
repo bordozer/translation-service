@@ -41,6 +41,7 @@ ext {
 apply plugin: 'net.ltgt.apt'
 
 dependencies {
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-web')
 
     compile group: 'io.projectreactor', name: 'reactor-core', version: reactorVersion

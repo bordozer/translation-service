@@ -10,6 +10,8 @@
 .settings
 .springBeans
 
+/bower_components/**
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
