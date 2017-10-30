@@ -15,6 +15,9 @@ import com.bordozer.translator.model.TranslationEntry;
 import com.bordozer.translator.model.TranslationEntryMissed;
 import com.bordozer.translator.model.TranslationEntryNerd;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Translator {
 
     private final Map<NerdKey, TranslationData> translationsMap;

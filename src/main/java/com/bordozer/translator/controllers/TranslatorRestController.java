@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/rest/translator")
+@RequestMapping("/translate")
 @RequiredArgsConstructor
 public class TranslatorRestController {
 
@@ -24,7 +24,7 @@ public class TranslatorRestController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public TranslationDTO translateMultiple(final ModifiableTranslationDTO dto, final Language language) {
-        log.info("Translate multiple: {}", dto);
+        log.info("Translate multiple ({}): {}", language, dto);
         return new ImmutableTranslationDTO.Builder()
             .translations(Maps.transformValues(dto.getTranslations(), nerd -> translateSingle(nerd, language)))
             .build();

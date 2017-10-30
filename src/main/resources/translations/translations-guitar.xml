@@ -3,6 +3,13 @@
 <translations>
 
 	<translation>
+		<nerd>guitarmaster</nerd>
+		<ru><![CDATA[Guitar master]]></ru>
+		<ua><![CDATA[Guitar master]]></ua>
+		<en><![CDATA[Guitar master]]></en>
+	</translation>
+
+	<translation>
 		<nerd>Guitar neck</nerd>
 		<ru><![CDATA[Ноты на грифе гитары]]></ru>
 		<ua><![CDATA[Ноти на грифi гiтари]]></ua>

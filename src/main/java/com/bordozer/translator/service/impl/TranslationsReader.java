@@ -20,11 +20,16 @@ import com.bordozer.translator.model.TranslationEntry;
 import com.bordozer.translator.model.TranslationEntryMissed;
 import com.bordozer.translator.model.TranslationEntryNerd;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class TranslationsReader {
 
     public static final String TRANSLATION = "translation";
 
     public static Map<NerdKey, TranslationData> getTranslationMap(final File translationsFile) throws DocumentException {
+
+        log.info("Translation file: {}", translationsFile.getPath());
 
         final SAXReader reader = new SAXReader(false);
         final Document document = reader.read(translationsFile);
@@ -37,6 +42,7 @@ public class TranslationsReader {
 
             final Element nerdElement = (Element) photosIterator.next();
             final String nerd = nerdElement.element(Language.NERD.getCode()).getText();
+            log.info("Found NERD: {}", nerd);
 
             final List<TranslationEntry> translations = newArrayList();
             translations.add(new TranslationEntryNerd(nerd));

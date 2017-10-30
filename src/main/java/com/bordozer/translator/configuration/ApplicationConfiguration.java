@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
+import com.bordozer.translator.service.impl.TranslatorServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -18,5 +19,10 @@ public class ApplicationConfiguration {
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 //        objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
         return objectMapper;
+    }
+
+    @Bean(name = "translatorService", initMethod = "init")
+    public TranslatorServiceImpl translatorService() {
+        return new TranslatorServiceImpl();
     }
 }
