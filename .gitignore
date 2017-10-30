@@ -10,7 +10,7 @@
 .settings
 .springBeans
 
-/bower_components/**
+/node_modules/**
 
 ### IntelliJ IDEA ###
 .idea

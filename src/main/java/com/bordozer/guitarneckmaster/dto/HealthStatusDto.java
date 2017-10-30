@@ -15,6 +15,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @Value.Modifiable
 public interface HealthStatusDto {
 
+    String getAppName();
+
     String getStatus();
 
     LocalDateTime getTime();

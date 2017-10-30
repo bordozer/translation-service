@@ -13,6 +13,7 @@ import com.bordozer.guitarneckmaster.utils.DateTimeUtils;
 @Mapper(config = MapstructImplPackage.class)
 public interface HealthCheckMapper {
 
+    @Mapping(target = "appName", constant = "Translation Service")
     @Mapping(target = "time", expression = "java(now())")
     ModifiableHealthStatusDto map(HealthStatus healthStatus);
 
