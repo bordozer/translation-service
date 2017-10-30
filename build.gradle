@@ -55,6 +55,8 @@ dependencies {
 
     compile group: 'org.immutables', name: 'value', version: immutablesVersion
     compile group: 'com.google.guava', name: 'guava', version: guavaVersion
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+    compile group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
 
