@@ -1,11 +1,11 @@
-package com.bordozer.guitarneckmaster.controllers;
+package com.bordozer.translator.controllers;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bordozer.guitarneckmaster.dto.HealthStatusDto;
-import com.bordozer.guitarneckmaster.service.HealthCheckService;
+import com.bordozer.translator.dto.HealthStatusDto;
+import com.bordozer.translator.service.HealthCheckService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

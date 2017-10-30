@@ -1,4 +1,4 @@
-package com.bordozer.guitarneckmaster.utils;
+package com.bordozer.translator.utils;
 
 import java.time.LocalDateTime;
 

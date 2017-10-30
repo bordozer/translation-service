@@ -1,4 +1,4 @@
-package com.bordozer.guitarneckmaster.configuration;
+package com.bordozer.translator.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

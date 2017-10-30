@@ -1,4 +1,4 @@
-package com.bordozer.guitarneckmaster.model;
+package com.bordozer.translator.model;
 
 import org.immutables.value.Value;
 

@@ -1,12 +1,12 @@
-package com.bordozer.guitarneckmaster.service.impl;
+package com.bordozer.translator.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.bordozer.guitarneckmaster.dto.HealthStatusDto;
-import com.bordozer.guitarneckmaster.mappers.HealthCheckMapper;
-import com.bordozer.guitarneckmaster.model.HealthStatus;
-import com.bordozer.guitarneckmaster.model.ImmutableHealthStatus;
-import com.bordozer.guitarneckmaster.service.HealthCheckService;
+import com.bordozer.translator.dto.HealthStatusDto;
+import com.bordozer.translator.mappers.HealthCheckMapper;
+import com.bordozer.translator.model.HealthStatus;
+import com.bordozer.translator.model.ImmutableHealthStatus;
+import com.bordozer.translator.service.HealthCheckService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
