@@ -23,15 +23,17 @@ public class TranslatorRestController {
     private final TranslatorService translatorService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
-    public TranslationDTO translateMultiple(final ModifiableTranslationDTO dto, final Language language) {
-        log.info("Translate multiple ({}): {}", language, dto);
+    public TranslationDTO translateMultiple(final ModifiableTranslationDTO translations, final Language language) {
+        assert language != null;
+        log.info("Translate multiple, language: {}, nerds map: {}", language, translations);
         return new ImmutableTranslationDTO.Builder()
-            .translations(Maps.transformValues(dto.getTranslations(), nerd -> translateSingle(nerd, language)))
+            .translations(Maps.transformValues(translations.getTranslations(), nerd -> translateSingle(nerd, language)))
             .build();
     }
 
     private String translateSingle(final String text, final Language language) {
-        log.info("Translate single value: {}", text);
+        assert language != null;
+//        log.info("Translate single value: {}", text);
         return translatorService.translate(text, language);
     }
 }
