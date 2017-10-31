@@ -3,9 +3,9 @@
 <translations>
 
 	<translation>
-		<nerd>Localization service</nerd>
-		<ru><![CDATA[Сервис локализации]]></ru>
-		<ua><![CDATA[Сервiс локалiзацiї]]></ua>
+		<nerd>Localization service is working</nerd>
+		<ru><![CDATA[Сервис локализации работает]]></ru>
+		<ua><![CDATA[Сервiс локалiзацiї процюе]]></ua>
 		<en><![CDATA[Localization service]]></en>
 	</translation>
 
