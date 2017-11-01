@@ -44,7 +44,7 @@ public class TranslatorRestController {
     public ResponseEntity<String> reload() {
         log.info("Translation reloaded by request");
         translatorService.reloadTranslations();
-        return new ResponseEntity<>("Done", getHttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>("All translations have been reloaded", getHttpHeaders(), HttpStatus.OK);
     }
 
     private HttpHeaders getHttpHeaders() {

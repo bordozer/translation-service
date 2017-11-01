@@ -3,10 +3,17 @@
 <translations>
 
 	<translation>
-		<nerd>guitarmaster</nerd>
-		<ru><![CDATA[Guitar master]]></ru>
-		<ua><![CDATA[Guitar master]]></ua>
-		<en><![CDATA[Guitar master]]></en>
+		<nerd>Home page</nerd>
+		<ru><![CDATA[Главная страница]]></ru>
+		<ua><![CDATA[Головна сторiнка]]></ua>
+		<en><![CDATA[Home page]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Health check</nerd>
+		<ru><![CDATA[Текущий статус]]></ru>
+		<ua><![CDATA[Поточний статус]]></ua>
+		<en><![CDATA[Health check]]></en>
 	</translation>
 
 	<translation>
@@ -385,6 +392,27 @@
 		<ru><![CDATA[Статус сервера]]></ru>
 		<ua><![CDATA[Статус сервера]]></ua>
 		<en><![CDATA[Application status]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Localization service URL</nerd>
+		<ru><![CDATA[Сервис локализации]]></ru>
+		<ua><![CDATA[Сервiс локалiзацiї]]></ua>
+		<en><![CDATA[Localization service URL]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Localization service message</nerd>
+		<ru><![CDATA[Сщщбщение от сервера локализации]]></ru>
+		<ua><![CDATA[Привiтання вiд сервiса локалiзацiї]]></ua>
+		<en><![CDATA[Localization service messag]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Request time</nerd>
+		<ru><![CDATA[Время запроса]]></ru>
+		<ua><![CDATA[Час запросу]]></ua>
+		<en><![CDATA[Request time]]></en>
 	</translation>
 
 	<translation>
