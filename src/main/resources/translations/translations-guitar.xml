@@ -367,6 +367,27 @@
 	</translation>
 
 	<translation>
+		<nerd>Application name</nerd>
+		<ru><![CDATA[Название приложения]]></ru>
+		<ua><![CDATA[Назва программи]]></ua>
+		<en><![CDATA[Application name]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Application URL</nerd>
+		<ru><![CDATA[Адрес сервера]]></ru>
+		<ua><![CDATA[Адреса сервера]]></ua>
+		<en><![CDATA[Application URL]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Application status</nerd>
+		<ru><![CDATA[Статус сервера]]></ru>
+		<ua><![CDATA[Статус сервера]]></ua>
+		<en><![CDATA[Application status]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
