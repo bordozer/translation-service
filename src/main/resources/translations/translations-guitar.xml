@@ -444,13 +444,6 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
-	</translation>
-
-	<translation>
 		<nerd>Settings tab</nerd>
 		<ru><![CDATA[Настройки]]></ru>
 		<ua><![CDATA[Налаштування]]></ua>
@@ -465,10 +458,45 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Synchronized with the global tonic</nerd>
+		<ru><![CDATA[Синхронизировано с глобальной тоникой]]></ru>
+		<ua><![CDATA[Синхронизовано з глобальною тонiкою]]></ua>
+		<en><![CDATA[Synchronized with the global tonic]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Delete sequence</nerd>
+		<ru><![CDATA[Удалить последовательность]]></ru>
+		<ua><![CDATA[Видалити послiдовнiсть]]></ua>
+		<en><![CDATA[Delete sequence]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Select one clicked note</nerd>
+		<ru><![CDATA[Выделять только кликнутую ноту]]></ru>
+		<ua><![CDATA[Пiдсвiтчувати лише клиiкнуту ноту]]></ua>
+		<en><![CDATA[Select one clicked note]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Select all clicked note of this octave</nerd>
+		<ru><![CDATA[Выделять кликнутую ноту из той же октавы на всх струнах]]></ru>
+		<ua><![CDATA[Пiдсвiтчувати клиiкнуту ноту з тiєї ж октави на усiх струнах]]></ua>
+		<en><![CDATA[Select all clicked note of this octave]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Select all clicked note at the string</nerd>
+		<ru><![CDATA[Выделять кликнутую ноту в пределах струны]]></ru>
+		<ua><![CDATA[Пiдсвiтчувати клиiкнуту ноту в межах однiєї струни]]></ua>
+		<en><![CDATA[Select all clicked note at the string]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Select all clicked note at the neck</nerd>
+		<ru><![CDATA[Выделять кликнутую ноту на всех грифе]]></ru>
+		<ua><![CDATA[Пiдсвiтчувати клиiкнуту ноту в межах усього грифу]]></ua>
+		<en><![CDATA[Select all clicked note at the neck]]></en>
 	</translation>
 
 	<translation>
