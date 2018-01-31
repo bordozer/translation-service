@@ -500,24 +500,24 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Selection tracks the tonic</nerd>
+		<ru><![CDATA[Выделенные ноты отслеживают глобальную тонику]]></ru>
+		<ua><![CDATA[Пiдсвiтченнi ноти слiдують за глобальною тонiкою]]></ua>
+		<en><![CDATA[Selection tracks the tonic]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Strings count</nerd>
+		<ru><![CDATA[Количество струн]]></ru>
+		<ua><![CDATA[Кiлькiсть струн]]></ua>
+		<en><![CDATA[Strings count]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Frets count</nerd>
+		<ru><![CDATA[Количество ладов]]></ru>
+		<ua><![CDATA[Кiлькiсть ладов]]></ua>
+		<en><![CDATA[Frets count]]></en>
 	</translation>
 
 	<translation>
