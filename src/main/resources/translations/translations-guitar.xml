@@ -416,6 +416,90 @@
 	</translation>
 
 	<translation>
+		<nerd>Sequences tab</nerd>
+		<ru><![CDATA[Музыкальные последовательности]]></ru>
+		<ua><![CDATA[Музичнi послiдовностi]]></ua>
+		<en><![CDATA[Sequences]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Selection tab</nerd>
+		<ru><![CDATA[Подсвеченные ноты]]></ru>
+		<ua><![CDATA[Пiдсвiченi ноти]]></ua>
+		<en><![CDATA[Selection]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Chords tab</nerd>
+		<ru><![CDATA[Аккорды]]></ru>
+		<ua><![CDATA[Акорди]]></ua>
+		<en><![CDATA[Chords]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Octaves tab</nerd>
+		<ru><![CDATA[Октавы]]></ru>
+		<ua><![CDATA[Октави]]></ua>
+		<en><![CDATA[Octaves]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Settings tab</nerd>
+		<ru><![CDATA[Настройки]]></ru>
+		<ua><![CDATA[Налаштування]]></ua>
+		<en><![CDATA[Settings]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Profiles tab</nerd>
+		<ru><![CDATA[Профайлы]]></ru>
+		<ua><![CDATA[Профайли]]></ua>
+		<en><![CDATA[Profiles]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
