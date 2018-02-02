@@ -549,6 +549,20 @@
 	</translation>
 
 	<translation>
+		<nerd>Nothing special</nerd>
+		<ru><![CDATA[Ничего особенного - просто нота]]></ru>
+		<ua><![CDATA[Ничого особливого - просто нота]]></ua>
+		<en><![CDATA[Nothing special - just a note]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
