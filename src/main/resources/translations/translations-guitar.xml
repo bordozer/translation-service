@@ -633,31 +633,66 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Set as default profile</nerd>
+		<ru><![CDATA[Сделать профайлом по-умолчанию]]></ru>
+		<ua><![CDATA[Зробити профайлом за замовченням]]></ua>
+		<en><![CDATA[Set as default profile]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Profile is already marked as default</nerd>
+		<ru><![CDATA[Профайл уже является профайлом по-умолчанию]]></ru>
+		<ua><![CDATA[Профайл вже є профайлом за замовченням]]></ua>
+		<en><![CDATA[Profile is already marked as default]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Save profile changes</nerd>
+		<ru><![CDATA[Сохранить изменения в профайле]]></ru>
+		<ua><![CDATA[Зберегти змiни у профайлi]]></ua>
+		<en><![CDATA[Save profile changes]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Edit profile</nerd>
+		<ru><![CDATA[Редактировать профайл]]></ru>
+		<ua><![CDATA[Редагувати профайл]]></ua>
+		<en><![CDATA[Edit profile]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Only active profile can be edited/saved</nerd>
+		<ru><![CDATA[Только активный профайл может быть изменен]]></ru>
+		<ua><![CDATA[Тiльки активний профайл може бути змiнений]]></ua>
+		<en><![CDATA[Only active profile can be edited/saved]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Discard profile changes</nerd>
+		<ru><![CDATA[Отменить изменения профайла]]></ru>
+		<ua><![CDATA[Вiдмiнити змiни у профайлi]]></ua>
+		<en><![CDATA[Discard profile changes]]></en>
+	</translation>
+
+	<translation>
+		<nerd>No profile changes, nothing to discard</nerd>
+		<ru><![CDATA[Изменений в профайле нет]]></ru>
+		<ua><![CDATA[Змiн у профайлi немає]]></ua>
+		<en><![CDATA[No profile changes, nothing to discard]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Delete profile</nerd>
+		<ru><![CDATA[Удалить профайл]]></ru>
+		<ua><![CDATA[Видалити профайл]]></ua>
+		<en><![CDATA[Delete profile]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Cannot delete default or active profile</nerd>
+		<ru><![CDATA[Активный или профайл по-умолчанию удалить нельзя]]></ru>
+		<ua><![CDATA[Активний чи профайл за замовченням не може бути видаленним]]></ua>
+		<en><![CDATA[Cannot delete default or active profile]]></en>
 	</translation>
 
 	<translation>
