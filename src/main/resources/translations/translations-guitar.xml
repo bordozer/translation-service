@@ -599,8 +599,8 @@
 
 	<translation>
 		<nerd>Create profile</nerd>
-		<ru><![CDATA[Создать новый профайл]]></ru>
-		<ua><![CDATA[Створити новий профайл]]></ua>
+		<ru><![CDATA[Создать профайл]]></ru>
+		<ua><![CDATA[Створити профайл]]></ua>
 		<en><![CDATA[Create profile]]></en>
 	</translation>
 
@@ -626,10 +626,10 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>New profile</nerd>
+		<ru><![CDATA[Новый профайл]]></ru>
+		<ua><![CDATA[Новий профайл]]></ua>
+		<en><![CDATA[New profile]]></en>
 	</translation>
 
 	<translation>
