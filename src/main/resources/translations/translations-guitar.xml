@@ -556,17 +556,59 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Register</nerd>
+		<ru><![CDATA[Регистрация]]></ru>
+		<ua><![CDATA[Реєстрацiя]]></ua>
+		<en><![CDATA[Register]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Really logout?</nerd>
+		<ru><![CDATA[Покинуть ваш кабинет?]]></ru>
+		<ua><![CDATA[Чи ви дiйсно бажаєте залишити свiй кабiнет?]]></ua>
+		<en><![CDATA[Really logout?]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Login</nerd>
+		<ru><![CDATA[Войти]]></ru>
+		<ua><![CDATA[Ввiйти]]></ua>
+		<en><![CDATA[Login]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Logout</nerd>
+		<ru><![CDATA[Выход]]></ru>
+		<ua><![CDATA[Вихiд]]></ua>
+		<en><![CDATA[Logout]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Profile name</nerd>
+		<ru><![CDATA[Имя профайла]]></ru>
+		<ua><![CDATA[Iм'я профайла]]></ua>
+		<en><![CDATA[Profile name]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Default profile</nerd>
+		<ru><![CDATA[Профайл по-умолчанию]]></ru>
+		<ua><![CDATA[Профайл за замовчуванням]]></ua>
+		<en><![CDATA[Default profile]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Create profile</nerd>
+		<ru><![CDATA[Создать новый профайл]]></ru>
+		<ua><![CDATA[Створити новий профайл]]></ua>
+		<en><![CDATA[Create profile]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Update profile</nerd>
+		<ru><![CDATA[Изменить профайл]]></ru>
+		<ua><![CDATA[Змiнити профайл]]></ua>
+		<en><![CDATA[Update profile]]></en>
 	</translation>
 
 	<translation>
