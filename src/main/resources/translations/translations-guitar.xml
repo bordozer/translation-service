@@ -612,6 +612,62 @@
 	</translation>
 
 	<translation>
+		<nerd>Sequence profiling is unavailable for unregistered user</nerd>
+		<ru><![CDATA[Работа с профайлами доступна только для зарегестрированных пользователей]]></ru>
+		<ua><![CDATA[Робота з профайламi доступна лише для зареєстрованих користувачiв]]></ua>
+		<en><![CDATA[Sequence profiling is unavailable for unregistered user]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Profile is a way to save a current state (selected sequences, guitar neck parameters and other settings)</nerd>
+		<ru><![CDATA[Профайл - это способ сохранить текущее состояние грифа (выбарнные последовательности, параметры грифа и прочее)]]></ru>
+		<ua><![CDATA[Профайл - це можливiсть сберегти поточний стан грифу (обранi послiдовностi, параметри грифу тощо)]]></ua>
+		<en><![CDATA[Profile is a way to save a current state (selected sequences, guitar neck parameters and other settings)]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
