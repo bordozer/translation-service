@@ -465,10 +465,10 @@
 	</translation>
 
 	<translation>
-		<nerd>Delete sequence</nerd>
-		<ru><![CDATA[Удалить последовательность]]></ru>
-		<ua><![CDATA[Видалити послiдовнiсть]]></ua>
-		<en><![CDATA[Delete sequence]]></en>
+		<nerd>Delete sequence permanently</nerd>
+		<ru><![CDATA[Удалить последовательность навсегда]]></ru>
+		<ua><![CDATA[Видалити послiдовнiсть назавжди]]></ua>
+		<en><![CDATA[Delete sequence permanently]]></en>
 	</translation>
 
 	<translation>
@@ -693,6 +693,34 @@
 		<ru><![CDATA[Активный или профайл по-умолчанию удалить нельзя]]></ru>
 		<ua><![CDATA[Активний чи профайл за замовченням не може бути видаленним]]></ua>
 		<en><![CDATA[Cannot delete default or active profile]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Edit sequence</nerd>
+		<ru><![CDATA[Редактировать музыкальную последовательность]]></ru>
+		<ua><![CDATA[Редагувати музичну послiдовнiсть]]></ua>
+		<en><![CDATA[Edit sequence]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Reset sequence custom color</nerd>
+		<ru><![CDATA[Сбросить цвет]]></ru>
+		<ua><![CDATA[Скасувати колiр]]></ua>
+		<en><![CDATA[Reset sequence custom color]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Remove selected sequence from selected list</nerd>
+		<ru><![CDATA[Удалить последовательность из списка выбранных]]></ru>
+		<ua><![CDATA[Видалити послiдовнiсть з листа обраных]]></ua>
+		<en><![CDATA[Remove selected sequence from selected list]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
 	</translation>
 
 	<translation>
