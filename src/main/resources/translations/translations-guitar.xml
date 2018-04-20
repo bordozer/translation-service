@@ -724,6 +724,20 @@
 	</translation>
 
 	<translation>
+		<nerd>Create new sequence</nerd>
+		<ru><![CDATA[Создать новую последовательность]]></ru>
+		<ua><![CDATA[Створити нову послiдовнiсть]]></ua>
+		<en><![CDATA[Create new sequence]]></en>
+	</translation>
+
+	<translation>
+		<nerd>New sequence</nerd>
+		<ru><![CDATA[Новая последовательность]]></ru>
+		<ua><![CDATA[Нова послiдовнiсть]]></ua>
+		<en><![CDATA[New sequence]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
