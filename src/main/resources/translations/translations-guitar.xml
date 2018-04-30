@@ -559,7 +559,7 @@
 		<nerd>Register</nerd>
 		<ru><![CDATA[Регистрация]]></ru>
 		<ua><![CDATA[Реєстрацiя]]></ua>
-		<en><![CDATA[Register]]></en>
+		<en><![CDATA[Sign up]]></en>
 	</translation>
 
 	<translation>
@@ -571,9 +571,9 @@
 
 	<translation>
 		<nerd>Login</nerd>
-		<ru><![CDATA[Войти]]></ru>
-		<ua><![CDATA[Ввiйти]]></ua>
-		<en><![CDATA[Login]]></en>
+		<ru><![CDATA[Вход]]></ru>
+		<ua><![CDATA[Вхiд]]></ua>
+		<en><![CDATA[Sign in]]></en>
 	</translation>
 
 	<translation>
@@ -780,10 +780,10 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Delete sequence forever?</nerd>
+		<ru><![CDATA[Удалить последовательность навсегда?]]></ru>
+		<ua><![CDATA[Видалити пслiдовнiсть назавжди?]]></ua>
+		<en><![CDATA[Delete sequence forever?]]></en>
 	</translation>
 
 	<translation>
