@@ -745,6 +745,55 @@
 	</translation>
 
 	<translation>
+		<nerd>Sequence name</nerd>
+		<ru><![CDATA[Название]]></ru>
+		<ua><![CDATA[Назва]]></ua>
+		<en><![CDATA[Sequence name]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Sequence type</nerd>
+		<ru><![CDATA[Тип]]></ru>
+		<ua><![CDATA[Тип]]></ua>
+		<en><![CDATA[Sequence type]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Sequence color</nerd>
+		<ru><![CDATA[Цвет]]></ru>
+		<ua><![CDATA[Колiр]]></ua>
+		<en><![CDATA[Sequence color]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Copy sequence</nerd>
+		<ru><![CDATA[Копировать последовательность]]></ru>
+		<ua><![CDATA[Копiювати послiдовнiсть]]></ua>
+		<en><![CDATA[Copy sequence]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Copy of</nerd>
+		<ru><![CDATA[Копия]]></ru>
+		<ua><![CDATA[Копiя]]></ua>
+		<en><![CDATA[Copy of]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
