@@ -416,6 +416,13 @@
 	</translation>
 
 	<translation>
+		<nerd>Selected sequences tab</nerd>
+		<ru><![CDATA[Последовательности на грифе]]></ru>
+		<ua><![CDATA[Послiдовностi на грифi]]></ua>
+		<en><![CDATA[Neck sequences]]></en>
+	</translation>
+
+	<translation>
 		<nerd>Sequences tab</nerd>
 		<ru><![CDATA[Музыкальные последовательности]]></ru>
 		<ua><![CDATA[Музичнi послiдовностi]]></ua>
@@ -791,6 +798,76 @@
 		<ru><![CDATA[Глобальная тоника]]></ru>
 		<ua><![CDATA[Глобальна тонiка]]></ua>
 		<en><![CDATA[Global tonic]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Deselect all sequences</nerd>
+		<ru><![CDATA[Скрыть все последовательности с грифа]]></ru>
+		<ua><![CDATA[Сховати усi послiдовностi з грифа]]></ua>
+		<en><![CDATA[Deselect all sequences]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Clear all selected sequences</nerd>
+		<ru><![CDATA[Удалить все последовательности с грифа]]></ru>
+		<ua><![CDATA[Видалити усi послiдовностi з грифа]]></ua>
+		<en><![CDATA[Clear all selected sequences]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Clear all selected notes</nerd>
+		<ru><![CDATA[Удалить все выделенные на грифе ноты]]></ru>
+		<ua><![CDATA[Видатити усi пiдсвiтченi на грифi ноти]]></ua>
+		<en><![CDATA[Clear all selected notes]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
 	</translation>
 
 	<translation>
