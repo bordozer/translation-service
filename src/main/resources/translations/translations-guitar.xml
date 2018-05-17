@@ -286,28 +286,28 @@
 		<nerd>Full note not in sequence</nerd>
 		<ru><![CDATA[Целая нота не из гаммы]]></ru>
 		<ua><![CDATA[Цiла нота не з гамми]]></ua>
-		<en><![CDATA[Full note not in a sequence]]></en>
+		<en><![CDATA[Full note not in a scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Half-tone note not in sequence</nerd>
 		<ru><![CDATA[Полутон не из гаммы]]></ru>
 		<ua><![CDATA[Полутон не з гамми]]></ua>
-		<en><![CDATA[Half-tone note not in a sequence]]></en>
+		<en><![CDATA[Half-tone note not in a scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Full note in sequence</nerd>
 		<ru><![CDATA[Целая нота из гаммы]]></ru>
 		<ua><![CDATA[Цiла нота з гамми]]></ua>
-		<en><![CDATA[Full note in a sequence]]></en>
+		<en><![CDATA[Full note in a scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Half-tone note in sequence</nerd>
 		<ru><![CDATA[Полутон из гаммы]]></ru>
 		<ua><![CDATA[Полутон з гамми]]></ua>
-		<en><![CDATA[Half-tone note in a sequence]]></en>
+		<en><![CDATA[Half-tone note in a scale]]></en>
 	</translation>
 
 	<translation>
@@ -426,7 +426,7 @@
 		<nerd>Sequences tab</nerd>
 		<ru><![CDATA[Музыкальные последовательности]]></ru>
 		<ua><![CDATA[Музичнi послiдовностi]]></ua>
-		<en><![CDATA[Sequences]]></en>
+		<en><![CDATA[Scales]]></en>
 	</translation>
 
 	<translation>
@@ -475,7 +475,7 @@
 		<nerd>Delete sequence permanently</nerd>
 		<ru><![CDATA[Удалить последовательность навсегда]]></ru>
 		<ua><![CDATA[Видалити послiдовнiсть назавжди]]></ua>
-		<en><![CDATA[Delete sequence permanently]]></en>
+		<en><![CDATA[Delete scale permanently]]></en>
 	</translation>
 
 	<translation>
@@ -622,14 +622,14 @@
 		<nerd>Sequence profiling is unavailable for unregistered user</nerd>
 		<ru><![CDATA[Работа с профайлами доступна только для зарегестрированных пользователей]]></ru>
 		<ua><![CDATA[Робота з профайламi доступна лише для зареєстрованих користувачiв]]></ua>
-		<en><![CDATA[Sequence profiling is unavailable for unregistered user]]></en>
+		<en><![CDATA[Profiling is unavailable for unregistered user]]></en>
 	</translation>
 
 	<translation>
-		<nerd>Profile is a way to save a current state (selected sequences, guitar neck parameters and other settings)</nerd>
-		<ru><![CDATA[Профайл - это способ сохранить текущее состояние грифа (выбарнные последовательности, параметры грифа и прочее)]]></ru>
-		<ua><![CDATA[Профайл - це можливiсть сберегти поточний стан грифу (обранi послiдовностi, параметри грифу тощо)]]></ua>
-		<en><![CDATA[Profile is a way to save a current state (selected sequences, guitar neck parameters and other settings)]]></en>
+		<nerd>Profile is a way to save a current state (neck scales, guitar neck parameters and other settings)</nerd>
+		<ru><![CDATA[Профайл - это способ сохранить текущее состояние грифа (последовательности грифа, параметры грифа и прочее)]]></ru>
+		<ua><![CDATA[Профайл - це можливiсть сберегти поточний стан грифу (послiдовностi грифа, параметри грифу тощо)]]></ua>
+		<en><![CDATA[Profile is a way to save a current state (neck scales, guitar neck parameters and other settings)]]></en>
 	</translation>
 
 	<translation>
@@ -706,77 +706,77 @@
 		<nerd>Edit sequence</nerd>
 		<ru><![CDATA[Редактировать музыкальную последовательность]]></ru>
 		<ua><![CDATA[Редагувати музичну послiдовнiсть]]></ua>
-		<en><![CDATA[Edit sequence]]></en>
+		<en><![CDATA[Edit scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Reset sequence custom color</nerd>
 		<ru><![CDATA[Сбросить цвет]]></ru>
 		<ua><![CDATA[Скасувати колiр]]></ua>
-		<en><![CDATA[Reset sequence custom color]]></en>
+		<en><![CDATA[Reset scale custom color]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Remove selected sequence from selected list</nerd>
-		<ru><![CDATA[Удалить последовательность из списка выбранных]]></ru>
-		<ua><![CDATA[Видалити послiдовнiсть з листа обраних]]></ua>
-		<en><![CDATA[Remove selected sequence from selected list]]></en>
+		<ru><![CDATA[Удалить последовательность с грифа]]></ru>
+		<ua><![CDATA[Видалити послiдовнiсть з грифа]]></ua>
+		<en><![CDATA[Remove selected scale from neck]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Click to set sequence custom color</nerd>
 		<ru><![CDATA[Кликните, чтобы поменять цвет на случайный]]></ru>
 		<ua><![CDATA[Клiкнiть для змiни колiру на випадковий]]></ua>
-		<en><![CDATA[Click to set sequence custom color]]></en>
+		<en><![CDATA[Click to set scale custom color]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Create new sequence</nerd>
 		<ru><![CDATA[Создать новую последовательность]]></ru>
 		<ua><![CDATA[Створити нову послiдовнiсть]]></ua>
-		<en><![CDATA[Create new sequence]]></en>
+		<en><![CDATA[Create new scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>New sequence</nerd>
 		<ru><![CDATA[Новая последовательность]]></ru>
 		<ua><![CDATA[Нова послiдовнiсть]]></ua>
-		<en><![CDATA[New sequence]]></en>
+		<en><![CDATA[New scale]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Select sequence custom color</nerd>
 		<ru><![CDATA[Выбрать цвет последовательности]]></ru>
 		<ua><![CDATA[Обрати колiр послiдовнiстi]]></ua>
-		<en><![CDATA[Select sequence custom color]]></en>
+		<en><![CDATA[Select scale custom color]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Sequence name</nerd>
 		<ru><![CDATA[Название]]></ru>
 		<ua><![CDATA[Назва]]></ua>
-		<en><![CDATA[Sequence name]]></en>
+		<en><![CDATA[scale name]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Sequence type</nerd>
 		<ru><![CDATA[Тип]]></ru>
 		<ua><![CDATA[Тип]]></ua>
-		<en><![CDATA[Sequence type]]></en>
+		<en><![CDATA[scale type]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Sequence color</nerd>
 		<ru><![CDATA[Цвет]]></ru>
 		<ua><![CDATA[Колiр]]></ua>
-		<en><![CDATA[Sequence color]]></en>
+		<en><![CDATA[scale color]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Copy sequence</nerd>
 		<ru><![CDATA[Копировать последовательность]]></ru>
 		<ua><![CDATA[Копiювати послiдовнiсть]]></ua>
-		<en><![CDATA[Copy sequence]]></en>
+		<en><![CDATA[Copy scale]]></en>
 	</translation>
 
 	<translation>
@@ -790,7 +790,7 @@
 		<nerd>Delete sequence forever?</nerd>
 		<ru><![CDATA[Удалить последовательность навсегда?]]></ru>
 		<ua><![CDATA[Видалити пслiдовнiсть назавжди?]]></ua>
-		<en><![CDATA[Delete sequence forever?]]></en>
+		<en><![CDATA[Delete scale forever?]]></en>
 	</translation>
 
 	<translation>
@@ -804,21 +804,21 @@
 		<nerd>Select all sequences</nerd>
 		<ru><![CDATA[Отобразить все последовательности на грифе]]></ru>
 		<ua><![CDATA[Вiдобразити усi послiдовностi на грифi]]></ua>
-		<en><![CDATA[Select all sequences]]></en>
+		<en><![CDATA[Select all scales]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Deselect all sequences</nerd>
 		<ru><![CDATA[Скрыть все последовательности с грифа]]></ru>
 		<ua><![CDATA[Сховати усi послiдовностi з грифа]]></ua>
-		<en><![CDATA[Deselect all sequences]]></en>
+		<en><![CDATA[Deselect all scales]]></en>
 	</translation>
 
 	<translation>
 		<nerd>Clear all selected sequences</nerd>
 		<ru><![CDATA[Удалить все последовательности с грифа]]></ru>
 		<ua><![CDATA[Видалити усi послiдовностi з грифа]]></ua>
-		<en><![CDATA[Clear all selected sequences]]></en>
+		<en><![CDATA[Clear all selected scales]]></en>
 	</translation>
 
 	<translation>
@@ -839,7 +839,7 @@
 		<nerd>Add sequence to selected</nerd>
 		<ru><![CDATA[Добавить последовательность на гриф]]></ru>
 		<ua><![CDATA[Додати послiдовнiсть на гриф]]></ua>
-		<en><![CDATA[Add sequence to the neck]]></en>
+		<en><![CDATA[Add scale to the neck]]></en>
 	</translation>
 
 	<translation>
@@ -867,7 +867,7 @@
 		<nerd>Find sequences by selection</nerd>
 		<ru><![CDATA[Найти последовательности, содержащие выделенные ноты]]></ru>
 		<ua><![CDATA[Знайти послiдовностi, що мають виделеннi ноти]]></ua>
-		<en><![CDATA[Find sequences by selection]]></en>
+		<en><![CDATA[Find scales by selection]]></en>
 	</translation>
 
 	<translation>
