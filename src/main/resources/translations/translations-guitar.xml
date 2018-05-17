@@ -864,10 +864,31 @@
 	</translation>
 
 	<translation>
-		<nerd>Hide chords</nerd>
-		<ru><![CDATA[Скрыть аккорды]]></ru>
-		<ua><![CDATA[Сховати акорди]]></ua>
-		<en><![CDATA[Hide chords]]></en>
+		<nerd>Show chord</nerd>
+		<ru><![CDATA[Отображать аккорды]]></ru>
+		<ua><![CDATA[Вiдображати акорди]]></ua>
+		<en><![CDATA[Show chord]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Show chord notes</nerd>
+		<ru><![CDATA[Подсветить ноты выбранного аккорда]]></ru>
+		<ua><![CDATA[Пiдсвiтити ноти обраного акорда]]></ua>
+		<en><![CDATA[Show chord notes]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
 	</translation>
 
 	<translation>
