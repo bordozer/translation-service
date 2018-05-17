@@ -801,6 +801,13 @@
 	</translation>
 
 	<translation>
+		<nerd>Select all sequences</nerd>
+		<ru><![CDATA[Отобразить все последовательности на грифе]]></ru>
+		<ua><![CDATA[Вiдобразити усi послiдовностi на грифi]]></ua>
+		<en><![CDATA[Select all sequences]]></en>
+	</translation>
+
+	<translation>
 		<nerd>Deselect all sequences</nerd>
 		<ru><![CDATA[Скрыть все последовательности с грифа]]></ru>
 		<ua><![CDATA[Сховати усi послiдовностi з грифа]]></ua>
@@ -812,6 +819,13 @@
 		<ru><![CDATA[Удалить все последовательности с грифа]]></ru>
 		<ua><![CDATA[Видалити усi послiдовностi з грифа]]></ua>
 		<en><![CDATA[Clear all selected sequences]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Hide chords and chord notes highlighting</nerd>
+		<ru><![CDATA[Скрыть аккорды и подсветку нот акордов]]></ru>
+		<ua><![CDATA[Сховати акорди та пiдсвiтчення но акордiв]]></ua>
+		<en><![CDATA[Hide chords and chord notes highlighting]]></en>
 	</translation>
 
 	<translation>
