@@ -416,7 +416,7 @@
 	</translation>
 
 	<translation>
-		<nerd>Selected sequences tab</nerd>
+		<nerd>Neck sequences tab</nerd>
 		<ru><![CDATA[Гриф]]></ru>
 		<ua><![CDATA[Гриф]]></ua>
 		<en><![CDATA[The neck]]></en>
@@ -717,10 +717,10 @@
 	</translation>
 
 	<translation>
-		<nerd>Remove selected sequence from selected list</nerd>
-		<ru><![CDATA[Удалить последовательность с грифа]]></ru>
-		<ua><![CDATA[Видалити послiдовнiсть з грифа]]></ua>
-		<en><![CDATA[Remove selected scale from neck]]></en>
+		<nerd>Remove all neck scales from the neck</nerd>
+		<ru><![CDATA[Убрать все последовательности с грифа]]></ru>
+		<ua><![CDATA[Прибрати усi послiдовнiстi з грифа]]></ua>
+		<en><![CDATA[Remove all neck scales from the neck]]></en>
 	</translation>
 
 	<translation>
@@ -815,10 +815,10 @@
 	</translation>
 
 	<translation>
-		<nerd>Clear all selected sequences</nerd>
+		<nerd>Clear all neck sequences</nerd>
 		<ru><![CDATA[Удалить все последовательности с грифа]]></ru>
 		<ua><![CDATA[Видалити усi послiдовностi з грифа]]></ua>
-		<en><![CDATA[Clear all selected scales]]></en>
+		<en><![CDATA[Clear all neck scales]]></en>
 	</translation>
 
 	<translation>
