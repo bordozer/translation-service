@@ -899,6 +899,90 @@
 	</translation>
 
 	<translation>
+		<nerd>User login</nerd>
+		<ru><![CDATA[Логин]]></ru>
+		<ua><![CDATA[Логiн]]></ua>
+		<en><![CDATA[Login]]></en>
+	</translation>
+
+	<translation>
+		<nerd>User password</nerd>
+		<ru><![CDATA[Пароль]]></ru>
+		<ua><![CDATA[Пароль]]></ua>
+		<en><![CDATA[Password]]></en>
+	</translation>
+
+	<translation>
+		<nerd>User name</nerd>
+		<ru><![CDATA[Имя]]></ru>
+		<ua><![CDATA[Iм'я]]></ua>
+		<en><![CDATA[Name]]></en>
+	</translation>
+
+	<translation>
+		<nerd>User UI language</nerd>
+		<ru><![CDATA[Язык]]></ru>
+		<ua><![CDATA[Мова]]></ua>
+		<en><![CDATA[Language]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Minor Pentatonic Nerd</nerd>
+		<ru><![CDATA[Минорная пентатоника]]></ru>
+		<ua><![CDATA[Мiнорна пентатонiка]]></ua>
+		<en><![CDATA[Minor Pentatonic]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Aeolian minor Nerd</nerd>
+		<ru><![CDATA[Эолийский (Натуральный) минор]]></ru>
+		<ua><![CDATA[Эолiйскьий (Натуральный) мiнор]]></ua>
+		<en><![CDATA[Aeolian (Natural) minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Validation error</nerd>
+		<ru><![CDATA[Так не пойдет]]></ru>
+		<ua><![CDATA[Нi, це не дiло]]></ua>
+		<en><![CDATA[Validation error]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Please, define you login</nerd>
+		<ru><![CDATA[Пожалуйста, укажите логин]]></ru>
+		<ua><![CDATA[Будьласка, вкажiть логiн]]></ua>
+		<en><![CDATA[Please, define you login]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Please, define you name</nerd>
+		<ru><![CDATA[Пожалуйста, укажите имя]]></ru>
+		<ua><![CDATA[Будьласка, вкажiть iм'я]]></ua>
+		<en><![CDATA[Please, define you name]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Please, define you password</nerd>
+		<ru><![CDATA[Пожалуйста, укажите пароль]]></ru>
+		<ua><![CDATA[Будьласка, вкажiть пароль]]></ua>
+		<en><![CDATA[Please, define you password]]></en>
+	</translation>
+
+	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
