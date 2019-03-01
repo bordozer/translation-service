@@ -927,20 +927,6 @@
 	</translation>
 
 	<translation>
-		<nerd>Minor Pentatonic Nerd</nerd>
-		<ru><![CDATA[Минорная пентатоника]]></ru>
-		<ua><![CDATA[Мiнорна пентатонiка]]></ua>
-		<en><![CDATA[Minor Pentatonic]]></en>
-	</translation>
-
-	<translation>
-		<nerd>Aeolian minor Nerd</nerd>
-		<ru><![CDATA[Эолийский (Натуральный) минор]]></ru>
-		<ua><![CDATA[Эолiйскьий (Натуральный) мiнор]]></ua>
-		<en><![CDATA[Aeolian (Natural) minor]]></en>
-	</translation>
-
-	<translation>
 		<nerd></nerd>
 		<ru><![CDATA[]]></ru>
 		<ua><![CDATA[]]></ua>
@@ -980,6 +966,391 @@
 		<ru><![CDATA[Пожалуйста, укажите пароль]]></ru>
 		<ua><![CDATA[Будьласка, вкажiть пароль]]></ua>
 		<en><![CDATA[Please, define you password]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Minor Pentatonic Nerd</nerd>
+		<ru><![CDATA[Минорная пентатоника]]></ru>
+		<ua><![CDATA[Мiнорна пентатонiка]]></ua>
+		<en><![CDATA[Minor Pentatonic]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Aeolian mode Nerd</nerd>
+		<ru><![CDATA[Эолийский (Натуральный) минор]]></ru>
+		<ua><![CDATA[Эолiйскьий (Натуральный) мiнор]]></ua>
+		<en><![CDATA[Aeolian mode (Natural minor scale)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Blues minor Nerd</nerd>
+		<ru><![CDATA[Минорная пентатоника с блюзовой нотой (Блюзовый минор)]]></ru>
+		<ua><![CDATA[Мiнорна пентатонiка з блюзовой нотой (Блюзовий мiнор)]]></ua>
+		<en><![CDATA[Minor pentatonic with blues note (blues minor)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Dorian mode Nerd</nerd>
+		<ru><![CDATA[Дорийский минор]]></ru>
+		<ua><![CDATA[Дорiйский мiнор]]></ua>
+		<en><![CDATA[Dorian mode]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Phrygian mode Nerd</nerd>
+		<ru><![CDATA[Фригийский минор]]></ru>
+		<ua><![CDATA[Фрiгiйский мiнор]]></ua>
+		<en><![CDATA[Phrygian mode]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Harmonic minor Nerd</nerd>
+		<ru><![CDATA[Гармонический минор]]></ru>
+		<ua><![CDATA[Гармонійний мiнор]]></ua>
+		<en><![CDATA[Harmonic Minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Double harmonic minor Nerd</nerd>
+		<ru><![CDATA[Дважды гармонический минор (Цыганский минор)]]></ru>
+		<ua><![CDATA[Дважды гармонійний мiнор (Циганський мiнор)]]></ua>
+		<en><![CDATA[Double harmonic minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Melodic minor Nerd</nerd>
+		<ru><![CDATA[Мелодический минор]]></ru>
+		<ua><![CDATA[Мелодійний мiнор]]></ua>
+		<en><![CDATA[Melodic minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Hiroyoshi Nerd</nerd>
+		<ru><![CDATA[Японский нейтральный (Хироёши)]]></ru>
+		<ua><![CDATA[Японський нейтральний (Хiроёшi)]]></ua>
+		<en><![CDATA[Japanese neutral (Hiroyoshi)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Hon Kumoi Nerd</nerd>
+		<ru><![CDATA[Японский минор (Хон Кумои)]]></ru>
+		<ua><![CDATA[Японський мiнор (Хон Кумоi)]]></ua>
+		<en><![CDATA[Japanese Minor (Hon Kumoi)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Ivato Nerd</nerd>
+		<ru><![CDATA[Японский минор (Ивато)]]></ru>
+		<ua><![CDATA[Японський мiнор (Iвато)]]></ua>
+		<en><![CDATA[Japanese Minor (Ivato)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Major Pentatonic Nerd</nerd>
+		<ru><![CDATA[Мажорная пентатоника]]></ru>
+		<ua><![CDATA[Мажорна пентатонiка]]></ua>
+		<en><![CDATA[Major Pentatonic]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Blues Major Nerd</nerd>
+		<ru><![CDATA[Минорная пентатоника с блюзовой нотой (Блюзовый мажор)]]></ru>
+		<ua><![CDATA[Мiнорна пентатонiка з блюзовой нотой (Блюзовй мажор)]]></ua>
+		<en><![CDATA[Major pentatonic with blues note (blues major)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Ionian mode Nerd</nerd>
+		<ru><![CDATA[Ионийский мажор (Натуральный мажор)]]></ru>
+		<ua><![CDATA[Iонийський мажор (Натуральний мажор)]]></ua>
+		<en><![CDATA[Ionian mode (Natural major scale)]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Lydian mode Nerd</nerd>
+		<ru><![CDATA[Лидийский мажор]]></ru>
+		<ua><![CDATA[Лiдiйський мажор]]></ua>
+		<en><![CDATA[Lydian mode]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Mixolydian mode Nerd</nerd>
+		<ru><![CDATA[Миксолидийский мажор]]></ru>
+		<ua><![CDATA[Мiксолiдiйський мажор]]></ua>
+		<en><![CDATA[Mixolydian mode]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Phrygian mode Nerd</nerd>
+		<ru><![CDATA[Фригийский мажор (Испанский лад)]]></ru>
+		<ua><![CDATA[Фрiгiйський мажор (Iспанський лад)]]></ua>
+		<en><![CDATA[Phrygian mode]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Harmonic major Nerd</nerd>
+		<ru><![CDATA[Гармонический мажор]]></ru>
+		<ua><![CDATA[Гармонійний мажор]]></ua>
+		<en><![CDATA[Harmonic major]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Double harmonic major Nerd</nerd>
+		<ru><![CDATA[Дважды гармонический мажор (Цыганский мажор)]]></ru>
+		<ua><![CDATA[Дважды гармонійний мажор (Циганський мажор)]]></ua>
+		<en><![CDATA[Double harmonic minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Melodic major Nerd</nerd>
+		<ru><![CDATA[Мелодический мажор]]></ru>
+		<ua><![CDATA[Мелодійний мажор]]></ua>
+		<en><![CDATA[Melodic minor]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Kumoi Nerd</nerd>
+		<ru><![CDATA[Японский мажор (Кумои)]]></ru>
+		<ua><![CDATA[Японский мажор (Кумоi)]]></ua>
+		<en><![CDATA[Japanese Major (Kumoi)]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
+	</translation>
+
+	<translation>
+		<nerd></nerd>
+		<ru><![CDATA[]]></ru>
+		<ua><![CDATA[]]></ua>
+		<en><![CDATA[]]></en>
 	</translation>
 
 	<translation>
