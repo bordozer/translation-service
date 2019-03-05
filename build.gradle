@@ -18,7 +18,8 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 group = 'com.bordozer'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
+archivesBaseName = 'translation-service'
 sourceCompatibility = 1.8
 
 repositories {
