@@ -1,8 +1,19 @@
 #!/bin/bash
 
+echo ""
+echo "[ Killing translator-service container ]"
 docker container rm --force translator-service
+
+echo ""
+echo "[ Gradle build ]"
 ./gradlew clean build -x check
+
+echo ""
+echo "[ Create docker immage ]"
 docker image build -t translation-service:1.1 .
+
+echo ""
+echo "[ Publish docker image ]"
 docker container run --publish 8978:8977 --name translator-service translation-service:1.1
 
 #docker ps

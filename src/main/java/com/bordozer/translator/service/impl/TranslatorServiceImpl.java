@@ -13,9 +13,11 @@ import org.dom4j.DocumentException;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static com.google.common.collect.Maps.newHashMap;
 
@@ -23,7 +25,7 @@ import static com.google.common.collect.Maps.newHashMap;
 @Service
 public class TranslatorServiceImpl implements TranslatorService {
 
-    private static final String TRANSLATIONS_PATH = "src/main/resources/translations/";
+    private static final String TRANSLATIONS_PATH = "translations/";
     private static final Language DEFAULT_LANGUAGE = Language.EN;
 
     private Translator translator;
@@ -79,14 +81,17 @@ public class TranslatorServiceImpl implements TranslatorService {
         final Map<NerdKey, TranslationData> translationsMap = newHashMap();
         translator = new Translator(translationsMap);
 
-        translator.addTranslationMap(getTranslationMap(new File(TRANSLATIONS_PATH)));
+        final File[] rootFiles = getTranslationResourcesRootFiles();
+        log.info("Translation resources root files: {}", LoggableJson.of(rootFiles));
+        Arrays.stream(rootFiles)
+                .forEach(file -> translator.addTranslationMap(getTranslationMap(file)));
     }
 
     private Map<NerdKey, TranslationData> getTranslationMap(final File dir) {
 
         final File[] farr = dir.listFiles();
         if (farr == null) {
-            log.error("No translation files found in dir '{}'", dir.getAbsolutePath());
+            log.error("No translation resources found in dir '{}'", dir.getAbsolutePath());
             return newHashMap();
         }
         log.info("Translation files found in dir '{}': {}", dir.getAbsolutePath(), LoggableJson.of(farr));
@@ -135,5 +140,14 @@ public class TranslatorServiceImpl implements TranslatorService {
 
     public void setTranslator(final Translator translator) {
         this.translator = translator;
+    }
+
+    private static File[] getTranslationResourcesRootFiles() {
+        final ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        final URL url = loader.getResource(TRANSLATIONS_PATH);
+        Objects.requireNonNull(url, String.format("%s URL cannot be got", TRANSLATIONS_PATH));
+        final String resourcesRootPath = url.getPath();
+        Objects.requireNonNull(resourcesRootPath, String.format("%s  path is null", LoggableJson.of(url)));
+        return new File(resourcesRootPath).listFiles();
     }
 }
