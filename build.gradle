@@ -43,6 +43,9 @@ docker {
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 ext {
@@ -61,6 +64,8 @@ ext {
 apply plugin: 'net.ltgt.apt'
 
 dependencies {
+    compile group: 'com.bordozer', name: 'commons', version: '3.10'
+
     compile('org.springframework.boot:spring-boot-starter-web')
 
     compile group: 'io.projectreactor', name: 'reactor-core', version: reactorVersion

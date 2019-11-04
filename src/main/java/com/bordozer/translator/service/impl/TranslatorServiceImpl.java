@@ -1,37 +1,33 @@
 package com.bordozer.translator.service.impl;
 
-import static com.google.common.collect.Maps.newHashMap;
-
-import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
-import org.dom4j.DocumentException;
-import org.springframework.stereotype.Service;
-
 import com.bordozer.translator.model.Language;
 import com.bordozer.translator.model.NerdKey;
 import com.bordozer.translator.model.TranslationData;
 import com.bordozer.translator.model.TranslationEntry;
 import com.bordozer.translator.model.TranslationEntryMissed;
 import com.bordozer.translator.service.TranslatorService;
-
 import lombok.extern.slf4j.Slf4j;
+import org.dom4j.DocumentException;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import static com.google.common.collect.Maps.newHashMap;
 
 @Slf4j
 @Service
 public class TranslatorServiceImpl implements TranslatorService {
 
-    public static final String TRANSLATIONS_PATH = "src/main/resources/translations/";
-
-    public static final Language DEFAULT_LANGUAGE = Language.EN;
+    private static final String TRANSLATIONS_PATH = "src/main/resources/translations/";
+    private static final Language DEFAULT_LANGUAGE = Language.EN;
 
     private Translator translator;
 
     @Override
     public String translate(final String nerd, final Language language, final String... params) {
-
         if (nerd.trim().length() == 0) {
             return nerd;
         }

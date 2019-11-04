@@ -1,5 +1,6 @@
 package com.bordozer.translator.controllers;
 
+import com.bordozer.commons.utils.LoggableJson;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,10 +27,9 @@ public class TranslatorRestController {
     private final TranslatorService translatorService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/translate/")
-    public ResponseEntity<TranslationDTO> translateMultiple(final ModifiableTranslationDTO translations,
-        final Language language) {
+    public ResponseEntity<TranslationDTO> translateMultiple(final ModifiableTranslationDTO translations, final Language language) {
         assert language != null;
-        log.info("Translate multiple, language: {}, nerds map: {}", language, translations);
+        log.info("Translate multiple, language: {}, nerds map: {}", language, LoggableJson.of(translations));
 
         return new ResponseEntity<>(
             new ImmutableTranslationDTO.Builder()
