@@ -1,7 +1,4 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG DEPENDENCY=target/dependency
-COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY ${DEPENDENCY}/META-INF /app/META-INF
-COPY ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-Dspring.profiles.active=local","-cp","app:app/lib/*","com.bordozer.translator.TranslatorApplication"]
+FROM java:8
+ADD build/libs/translation-service-docker-1.1.jar rest-api.jar
+RUN bash -c 'touch /pegasus.jar'
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=local","-jar","/rest-api.jar"]
