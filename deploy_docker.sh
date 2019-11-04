@@ -1,5 +1,6 @@
 #!/bin/bash
 
+docker container rm --force translator-service
 ./gradlew clean build -x check
 docker image build -t translation-service:1.1 .
 docker container run --publish 8978:8977 --name translator-service translation-service:1.1

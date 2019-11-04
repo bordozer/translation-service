@@ -1,21 +1,21 @@
 package com.bordozer.translator.service.impl;
 
-import static com.google.common.collect.Lists.newArrayList;
-import static com.google.common.collect.Maps.newHashMap;
-import static com.google.common.collect.Maps.newLinkedHashMap;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.bordozer.commons.utils.LoggableJson;
 import com.bordozer.translator.model.Language;
 import com.bordozer.translator.model.NerdKey;
 import com.bordozer.translator.model.TranslationData;
 import com.bordozer.translator.model.TranslationEntry;
 import com.bordozer.translator.model.TranslationEntryMissed;
 import com.bordozer.translator.model.TranslationEntryNerd;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Maps.newHashMap;
+import static com.google.common.collect.Maps.newLinkedHashMap;
 
 @Slf4j
 public class Translator {
@@ -23,11 +23,11 @@ public class Translator {
     private final Map<NerdKey, TranslationData> translationsMap;
     private final Map<NerdKey, TranslationData> untranslatedMap = newHashMap();
 
-    public Translator(final Map<NerdKey, TranslationData> translationsMap) {
+    Translator(final Map<NerdKey, TranslationData> translationsMap) {
         this.translationsMap = translationsMap;
     }
 
-    public TranslationEntry getTranslation(final String nerd, final Language language) {
+    TranslationEntry getTranslation(final String nerd, final Language language) {
 
         final NerdKey key = new NerdKey(nerd);
 
@@ -45,11 +45,7 @@ public class Translator {
         return translationData.getTranslationEntry(language);
     }
 
-    public String translate(final String nerd, final Language language) {
-        return getTranslation(nerd, language).getValueWithPrefixes();
-    }
-
-    public void registerTranslationEntry(final TranslationEntry translationEntry) {
+    private void registerTranslationEntry(final TranslationEntry translationEntry) {
         final NerdKey nerdKey = new NerdKey(translationEntry.getNerd());
         if (!translationsMap.containsKey(nerdKey)) {
             synchronized (translationsMap) {
@@ -60,7 +56,7 @@ public class Translator {
         }
     }
 
-    public void registerNotTranslationEntry(final TranslationEntry translationEntry) {
+    void registerNotTranslationEntry(final TranslationEntry translationEntry) {
 
         registerTranslationEntry(translationEntry);
 
@@ -68,14 +64,45 @@ public class Translator {
         if (!untranslatedMap.containsKey(nerdKey)) {
             synchronized (untranslatedMap) {
                 if (!untranslatedMap.containsKey(nerdKey)) {
+                    log.info("Register new untranslated entry. Nerd: '{}'", LoggableJson.of(nerdKey));
                     addTranslationEntryToMap(untranslatedMap, translationEntry);
                 }
             }
         }
     }
 
-    public void addTranslationMap(final Map<NerdKey, TranslationData> translationsMap) {
+    void addTranslationMap(final Map<NerdKey, TranslationData> translationsMap) {
         this.translationsMap.putAll(translationsMap);
+    }
+
+    Map<NerdKey, TranslationData> getTranslationsMap() {
+        return translationsMap;
+    }
+
+    Map<NerdKey, TranslationData> getUntranslatedMap() {
+        return untranslatedMap;
+    }
+
+    Map<NerdKey, TranslationData> getUnusedTranslationsMap() {
+        final Map<NerdKey, TranslationData> translationsMap = getTranslationsMap();
+        final HashMap<NerdKey, TranslationData> map = newLinkedHashMap();
+
+        for (final NerdKey nerdKey : translationsMap.keySet()) {
+
+            final TranslationData translationData = translationsMap.get(nerdKey);
+            final List<TranslationEntry> translations = newArrayList(new TranslationEntryNerd(nerdKey.getNerd())); // translationData.getTranslations()
+
+            if (translationData.getUsageIndex() == 0) {
+                map.put(nerdKey, new TranslationData(nerdKey.getNerd(), translations, translationData.getUsageIndex()));
+            }
+        }
+
+        return map;
+    }
+
+    void clearUntranslatedMap() {
+        log.info("Translated map is cleared");
+        untranslatedMap.clear();
     }
 
     private void addTranslationEntryToMap(final Map<NerdKey, TranslationData> map, final TranslationEntry translationEntry) {
@@ -104,34 +131,5 @@ public class Translator {
         }
 
         return false;
-    }
-
-    public Map<NerdKey, TranslationData> getTranslationsMap() {
-        return translationsMap;
-    }
-
-    public Map<NerdKey, TranslationData> getUntranslatedMap() {
-        return untranslatedMap;
-    }
-
-    public Map<NerdKey, TranslationData> getUnusedTranslationsMap() {
-        final Map<NerdKey, TranslationData> translationsMap = getTranslationsMap();
-        final HashMap<NerdKey, TranslationData> map = newLinkedHashMap();
-
-        for (final NerdKey nerdKey : translationsMap.keySet()) {
-
-            final TranslationData translationData = translationsMap.get(nerdKey);
-            final List<TranslationEntry> translations = newArrayList(new TranslationEntryNerd(nerdKey.getNerd())); // translationData.getTranslations()
-
-            if (translationData.getUsageIndex() == 0) {
-                map.put(nerdKey, new TranslationData(nerdKey.getNerd(), translations, translationData.getUsageIndex()));
-            }
-        }
-
-        return map;
-    }
-
-    public void clearUntranslatedMap() {
-        untranslatedMap.clear();
     }
 }

@@ -1,5 +1,6 @@
 package com.bordozer.translator.service.impl;
 
+import com.bordozer.commons.utils.LoggableJson;
 import com.bordozer.translator.model.Language;
 import com.bordozer.translator.model.NerdKey;
 import com.bordozer.translator.model.TranslationData;
@@ -7,6 +8,7 @@ import com.bordozer.translator.model.TranslationEntry;
 import com.bordozer.translator.model.TranslationEntryMissed;
 import com.bordozer.translator.service.TranslatorService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.dom4j.DocumentException;
 import org.springframework.stereotype.Service;
 
@@ -28,17 +30,22 @@ public class TranslatorServiceImpl implements TranslatorService {
 
     @Override
     public String translate(final String nerd, final Language language, final String... params) {
-        if (nerd.trim().length() == 0) {
+        if (StringUtils.isBlank(nerd)) {
+            log.info("Nerd '{}' is blank - no translation needed", LoggableJson.of(nerd));
             return nerd;
         }
 
         if (language == Language.NERD) {
+            log.info("Translation language is nerd - no translation needed. Nerd: '{}'", nerd);
             return nerd;
         }
 
+        log.info("About to get translation for nerd '{}', language: '{}'", nerd, language);
         final TranslationEntry translationEntry = translator.getTranslation(nerd, language);
+        log.info("Translation entry: {}, language: '{}'", nerd, language);
 
         if (translationEntry instanceof TranslationEntryMissed) {
+            log.warn("Missed translation: {}, language: '{}'", nerd, language);
             translator.registerNotTranslationEntry(translationEntry);
         }
 
@@ -67,8 +74,8 @@ public class TranslatorServiceImpl implements TranslatorService {
         return translator.getUnusedTranslationsMap();
     }
 
-    public void init() throws DocumentException {
-
+    public void init() {
+        log.info("Init translations...");
         final Map<NerdKey, TranslationData> translationsMap = newHashMap();
         translator = new Translator(translationsMap);
 
@@ -79,8 +86,10 @@ public class TranslatorServiceImpl implements TranslatorService {
 
         final File[] farr = dir.listFiles();
         if (farr == null) {
+            log.error("No translation files found in dir '{}'", dir.getAbsolutePath());
             return newHashMap();
         }
+        log.info("Translation files found in dir '{}': {}", dir.getAbsolutePath(), LoggableJson.of(farr));
 
         final List<File> files = Arrays.asList(farr);
 
@@ -102,10 +111,8 @@ public class TranslatorServiceImpl implements TranslatorService {
     }
 
     @Override
-    public void reloadTranslations() throws DocumentException {
-
+    public void reloadTranslations() {
         translator.clearUntranslatedMap();
-
         init();
     }
 

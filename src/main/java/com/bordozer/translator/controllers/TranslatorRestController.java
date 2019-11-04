@@ -29,7 +29,7 @@ public class TranslatorRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/translate/")
     public ResponseEntity<TranslationDTO> translateMultiple(final ModifiableTranslationDTO translations, final Language language) {
         assert language != null;
-        log.info("Translate multiple, language: {}, nerds map: {}", language, LoggableJson.of(translations));
+        log.info("Multiple translate request, language: {}, nerds map: {}", language, LoggableJson.of(translations));
 
         return new ResponseEntity<>(
             new ImmutableTranslationDTO.Builder()
