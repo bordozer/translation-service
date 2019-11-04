@@ -25,7 +25,7 @@ import static com.google.common.collect.Maps.newHashMap;
 @Service
 public class TranslatorServiceImpl implements TranslatorService {
 
-    private static final String TRANSLATIONS_PATH = "translations/";
+    private static final String TRANSLATIONS_PATH = "translations";
     private static final Language DEFAULT_LANGUAGE = Language.EN;
 
     private Translator translator;
@@ -144,10 +144,16 @@ public class TranslatorServiceImpl implements TranslatorService {
 
     private static File[] getTranslationResourcesRootFiles() {
         final ClassLoader loader = Thread.currentThread().getContextClassLoader();
+
         final URL url = loader.getResource(TRANSLATIONS_PATH);
         Objects.requireNonNull(url, String.format("%s URL cannot be got", TRANSLATIONS_PATH));
+
         final String resourcesRootPath = url.getPath();
         Objects.requireNonNull(resourcesRootPath, String.format("%s  path is null", LoggableJson.of(url)));
-        return new File(resourcesRootPath).listFiles();
+
+        log.info("Resources Root Path: '{}'", resourcesRootPath);
+        final File[] files = new File(resourcesRootPath).listFiles();
+        Objects.requireNonNull(files, "Translation resource root is empty! No translations files found");
+        return files;
     }
 }

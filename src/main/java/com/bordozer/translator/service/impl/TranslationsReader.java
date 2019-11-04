@@ -23,11 +23,11 @@ import com.bordozer.translator.model.TranslationEntryNerd;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class TranslationsReader {
+class TranslationsReader {
 
-    public static final String TRANSLATION = "translation";
+    private static final String TRANSLATION = "translation";
 
-    public static Map<NerdKey, TranslationData> getTranslationMap(final File translationsFile) throws DocumentException {
+    static Map<NerdKey, TranslationData> getTranslationMap(final File translationsFile) throws DocumentException {
 
         log.info("Translation file: {}", translationsFile.getPath());
 
