@@ -10,15 +10,23 @@ import com.bordozer.translator.service.TranslatorService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.DocumentException;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
-import java.net.URL;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UncheckedIOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
+import static com.google.common.base.Charsets.UTF_8;
 import static com.google.common.collect.Maps.newHashMap;
 
 @Slf4j
@@ -81,37 +89,14 @@ public class TranslatorServiceImpl implements TranslatorService {
         final Map<NerdKey, TranslationData> translationsMap = newHashMap();
         translator = new Translator(translationsMap);
 
-        final File[] rootFiles = getTranslationResourcesRootFiles();
-        log.info("Translation resources root files: {}", LoggableJson.of(rootFiles));
-        Arrays.stream(rootFiles)
-                .forEach(file -> translator.addTranslationMap(getTranslationMap(file)));
+        final List<String> xmlContexts = getTranslationResourceContexts();
+        log.info("Translation resources root files: {}", LoggableJson.of(xmlContexts));
+        xmlContexts.forEach(xmlContext -> translator.addTranslationMap(getTranslationMap(xmlContext)));
     }
 
-    private Map<NerdKey, TranslationData> getTranslationMap(final File dir) {
-
-        final File[] farr = dir.listFiles();
-        if (farr == null) {
-            log.error("No translation resources found in dir '{}'", dir.getAbsolutePath());
-            return newHashMap();
-        }
-        log.info("Translation files found in dir '{}': {}", dir.getAbsolutePath(), LoggableJson.of(farr));
-
-        final List<File> files = Arrays.asList(farr);
-
+    private Map<NerdKey, TranslationData> getTranslationMap(final String context) {
         final Map<NerdKey, TranslationData> result = newHashMap();
-        for (final File file : files) {
-            if (file.isDirectory()) {
-                result.putAll(getTranslationMap(file));
-                continue;
-            }
-
-            try {
-                result.putAll(TranslationsReader.getTranslationMap(file));
-            } catch (final DocumentException e) {
-                log.error(String.format("Can not load translation from file '%s'", file.getAbsolutePath()), e);
-            }
-        }
-
+        result.putAll(TranslationsReader.getTranslationMap(context));
         return result;
     }
 
@@ -142,8 +127,19 @@ public class TranslatorServiceImpl implements TranslatorService {
         this.translator = translator;
     }
 
-    private static File[] getTranslationResourcesRootFiles() {
-        final ClassLoader loader = Thread.currentThread().getContextClassLoader();
+    private static List<String> getTranslationResourceContexts() {
+        final PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        try {
+            final Resource[] messageResources = resolver.getResources("classpath*:/translations/*.xml");
+            return Arrays.stream(messageResources)
+                    .map(getResourceContext())
+                    .collect(Collectors.toList());
+        } catch (final IOException e) {
+            log.error("Resources list error: '{}'", e.getMessage());
+            throw new IllegalStateException("Cannot get translation resources list");
+        }
+
+        /*final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
         final URL url = loader.getResource(TRANSLATIONS_PATH);
         Objects.requireNonNull(url, String.format("%s URL cannot be got", TRANSLATIONS_PATH));
@@ -154,6 +150,21 @@ public class TranslatorServiceImpl implements TranslatorService {
         log.info("Resources Root Path: '{}'", resourcesRootPath);
         final File[] files = new File(resourcesRootPath).listFiles();
         Objects.requireNonNull(files, "Translation resource root is empty! No translations files found");
-        return files;
+        return files;*/
+    }
+
+    private static Function<Resource, String> getResourceContext() {
+        return resource -> {
+            log.info("Found resource: {}", resource);
+            return resourceAsString(resource);
+        };
+    }
+
+    private static String resourceAsString(final Resource resource) {
+        try (final Reader reader = new InputStreamReader(resource.getInputStream(), UTF_8)) {
+            return FileCopyUtils.copyToString(reader);
+        } catch (final IOException ex) {
+            throw new UncheckedIOException(ex);
+        }
     }
 }

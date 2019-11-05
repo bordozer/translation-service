@@ -18,7 +18,7 @@ import static com.google.common.collect.Maps.newHashMap;
 import static com.google.common.collect.Maps.newLinkedHashMap;
 
 @Slf4j
-public class Translator {
+class Translator {
 
     private final Map<NerdKey, TranslationData> translationsMap;
     private final Map<NerdKey, TranslationData> untranslatedMap = newHashMap();
