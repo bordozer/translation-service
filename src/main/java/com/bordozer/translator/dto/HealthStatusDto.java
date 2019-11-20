@@ -25,4 +25,8 @@ public interface HealthStatusDto {
     List<Language> getSupportedLanguages();
 
     LocalDateTime getTime();
+
+    String getIp();
+
+    String getHostname();
 }

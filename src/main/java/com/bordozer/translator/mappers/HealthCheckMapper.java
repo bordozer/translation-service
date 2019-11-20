@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.bordozer.translator.utils.IpUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -22,7 +23,9 @@ public interface HealthCheckMapper {
     @Mapping(target = "appName", constant = "Translation Service")
     @Mapping(target = "time", expression = "java(now())")
     @Mapping(target = "supportedLanguages", expression = "java(supportedLanguages())")
-    ModifiableHealthStatusDto map(HealthStatus healthStatus);
+    @Mapping(target = "ip", source = "ip.ip")
+    @Mapping(target = "hostname", source = "ip.hostname")
+    ModifiableHealthStatusDto map(HealthStatus healthStatus, IpUtils.Ip ip);
 
     default LocalDateTime now() {
         return DateTimeUtils.now();
