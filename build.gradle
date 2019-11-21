@@ -82,6 +82,10 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
     compile group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
 
+    compile group: 'ch.qos.logback', name: 'logback-classic'
+    compile group: 'org.slf4j', name: 'jul-to-slf4j'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j'
+
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
 
     testCompile('org.springframework.boot:spring-boot-starter-test')

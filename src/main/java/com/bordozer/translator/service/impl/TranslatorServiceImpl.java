@@ -1,21 +1,14 @@
 package com.bordozer.translator.service.impl;
 
-import com.bordozer.commons.utils.LoggableJson;
-import com.bordozer.translator.model.Language;
-import com.bordozer.translator.model.NerdKey;
-import com.bordozer.translator.model.TranslationData;
-import com.bordozer.translator.model.TranslationEntry;
-import com.bordozer.translator.model.TranslationEntryMissed;
+import com.bordozer.translator.model.*;
 import com.bordozer.translator.service.TranslatorService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.dom4j.DocumentException;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -41,21 +34,21 @@ public class TranslatorServiceImpl implements TranslatorService {
     @Override
     public String translate(final String nerd, final Language language, final String... params) {
         if (StringUtils.isBlank(nerd)) {
-            log.info("Nerd '{}' is blank - no translation needed", LoggableJson.of(nerd));
+//            log.info("Nerd '{}' is blank - no translation needed", LoggableJson.of(nerd));
             return nerd;
         }
 
         if (language == Language.NERD) {
-            log.info("Translation language is nerd - no translation needed. Nerd: '{}'", nerd);
+//            log.info("Translation language is nerd - no translation needed. Nerd: '{}'", nerd);
             return nerd;
         }
 
-        log.info("About to get translation for nerd '{}', language: '{}'", nerd, language);
+//        log.info("About to get translation for nerd '{}', language: '{}'", nerd, language);
         final TranslationEntry translationEntry = translator.getTranslation(nerd, language);
-        log.info("Translation entry: {}, language: '{}'", nerd, language);
+//        log.info("Translation entry: {}, language: '{}'", nerd, language);
 
         if (translationEntry instanceof TranslationEntryMissed) {
-            log.warn("Missed translation: {}, language: '{}'", nerd, language);
+//            log.warn("Missed translation: {}, language: '{}'", nerd, language);
             translator.registerNotTranslationEntry(translationEntry);
         }
 
@@ -85,12 +78,12 @@ public class TranslatorServiceImpl implements TranslatorService {
     }
 
     public void init() {
-        log.info("Init translations...");
+//        log.info("Init translations...");
         final Map<NerdKey, TranslationData> translationsMap = newHashMap();
         translator = new Translator(translationsMap);
 
         final List<String> xmlContexts = getTranslationResourceContexts();
-        log.info("Translation resources root files: {}", LoggableJson.of(xmlContexts));
+//        log.info("Translation resources root files: {}", LoggableJson.of(xmlContexts));
         xmlContexts.forEach(xmlContext -> translator.addTranslationMap(getTranslationMap(xmlContext)));
     }
 
@@ -155,7 +148,7 @@ public class TranslatorServiceImpl implements TranslatorService {
 
     private static Function<Resource, String> getResourceContext() {
         return resource -> {
-            log.info("Found resource: {}", resource);
+//            log.info("Found resource: {}", resource);
             return resourceAsString(resource);
         };
     }

@@ -64,7 +64,7 @@ class Translator {
         if (!untranslatedMap.containsKey(nerdKey)) {
             synchronized (untranslatedMap) {
                 if (!untranslatedMap.containsKey(nerdKey)) {
-                    log.info("Register new untranslated entry. Nerd: '{}'", LoggableJson.of(nerdKey));
+//                    log.info("Register new untranslated entry. Nerd: '{}'", LoggableJson.of(nerdKey));
                     addTranslationEntryToMap(untranslatedMap, translationEntry);
                 }
             }

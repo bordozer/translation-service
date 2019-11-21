@@ -35,7 +35,7 @@ class TranslationsReader {
 
                 final Element nerdElement = (Element) photosIterator.next();
                 final String nerd = nerdElement.element(Language.NERD.getCode()).getText();
-                log.info("Found NERD: {}", nerd);
+//                log.info("Found NERD: {}", nerd);
 
                 final List<TranslationEntry> translations = newArrayList();
                 translations.add(new TranslationEntryNerd(nerd));
