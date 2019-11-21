@@ -1,7 +1,7 @@
 #!/bin/bash
 
-docker image rm img.translator.bordozer:1.1
 docker container rm --force translator.bordozer
+docker image rm img.translator.bordozer:1.1
 
 ./gradlew clean build -x check
 
