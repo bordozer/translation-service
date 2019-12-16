@@ -27,7 +27,7 @@
         </layout>
     </appender>
 
-    <logger name="com.bordozer.commons.web.RequestLogFilter" level="INFO" >
+    <logger name="com.bordozer.commons.web.WebLogger" level="INFO" >
         <appender-ref ref="WEB_REQUESTS_FILE" />
     </logger>
 

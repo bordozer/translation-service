@@ -65,7 +65,7 @@ ext {
 apply plugin: 'net.ltgt.apt'
 
 dependencies {
-    compile group: 'com.bordozer', name: 'commons', version: '3.25'
+    compile group: 'com.bordozer', name: 'commons', version: '3.30'
 
     compile('org.springframework.boot:spring-boot-starter-web')
 
@@ -109,6 +109,7 @@ compileJava.dependsOn clean
 /* JUnit5 */
 test {
     useJUnitPlatform()
+    systemProperties System.properties
     testLogging {
         events 'PASSED', 'FAILED', 'SKIPPED'
     }

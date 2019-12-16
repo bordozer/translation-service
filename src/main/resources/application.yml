@@ -9,19 +9,13 @@ logging:
 application:
   properties:
     logging:
+      logRequest: true
+      logResponse: true
       logRequestForUrls: /*
 
 ---
 spring:
   profiles: local
-
-security:
-  basic:
-    enabled: false
-
-management:
-  security:
-    enabled: false
 
 server:
   port: 8977
