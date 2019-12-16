@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.8.RELEASE'
+        springBootVersion = '2.2.0.RELEASE'
     }
     repositories {
         mavenLocal()
@@ -9,39 +9,64 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
         classpath "net.ltgt.gradle:gradle-apt-plugin:0.10"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'com.palantir.docker'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group = 'com.bordozer'
-version = '1.0'
-archivesBaseName = 'translation-service'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootJar {
+    baseName = 'translation-service'
+    version =  '1.1'
+}
+
+task unpack(type: Copy) {
+    dependsOn bootJar
+    from(zipTree(tasks.bootJar.outputs.files.singleFile))
+    into("build/dependency")
+}
+docker {
+    name "${project.group}/${bootJar.baseName}"
+    copySpec.from(tasks.unpack.outputs).into("dependency")
+    buildArgs(['DEPENDENCY': "dependency"])
+}
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 ext {
     hibernateVersion = '5.2.12.Final'
-    assertjVersion = '3.8.0'
-    mockitoVersion = '2.11.0'
+    assertjVersion = '3.14.0'
+    mockitoVersion = '3.2.0'
     mapstructVersion = '1.2.0.Final'
-    guavaVersion = '21.0'
+    guavaVersion = '28.1-jre'
     reactorVersion = '3.1.1.RELEASE'
     immutablesVersion = '2.5.6'
     jacksonDdatatypeVersion = '2.9.2'
     reactiveStreamsVersion = '1.2.1'
-    lombokVersion = '1.16.18'
+    lombokVersion = '1.18.10'
+    junitVersion = '5.3.2'
 }
 
 apply plugin: 'net.ltgt.apt'
 
 dependencies {
+    compile group: 'com.bordozer', name: 'commons', version: '3.25'
+
     compile('org.springframework.boot:spring-boot-starter-web')
 
     compile group: 'io.projectreactor', name: 'reactor-core', version: reactorVersion
@@ -58,7 +83,15 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
     compile group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
 
+    compile group: 'ch.qos.logback', name: 'logback-classic'
+    compile group: 'org.slf4j', name: 'jul-to-slf4j'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j'
+
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: junitVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitVersion
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile group: 'org.assertj', name: 'assertj-core', version: assertjVersion
@@ -72,3 +105,12 @@ sourceSets {
 }
 
 compileJava.dependsOn clean
+
+/* JUnit5 */
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'PASSED', 'FAILED', 'SKIPPED'
+    }
+}
+test.testLogging.showStandardStreams = true

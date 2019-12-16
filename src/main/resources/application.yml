@@ -5,6 +5,12 @@ spring:
 logging:
   level:
     root: info
+
+application:
+  properties:
+    logging:
+      logRequestForUrls: /*
+
 ---
 spring:
   profiles: local

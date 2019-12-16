@@ -1,14 +1,15 @@
 package com.bordozer.translator.configuration;
 
+import com.bordozer.translator.service.impl.TranslatorServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-import com.bordozer.translator.service.impl.TranslatorServiceImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-
+@Slf4j
 @Configuration
 public class ApplicationConfiguration {
 
@@ -17,7 +18,6 @@ public class ApplicationConfiguration {
     public ObjectMapper objectMapper(final Jackson2ObjectMapperBuilder builder) {
         final ObjectMapper objectMapper = builder.createXmlMapper(false).build();
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-//        objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
         return objectMapper;
     }
 

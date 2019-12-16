@@ -1,5 +1,6 @@
 package com.bordozer.translator.service.impl;
 
+import com.bordozer.commons.utils.IpUtils;
 import org.springframework.stereotype.Service;
 
 import com.bordozer.translator.dto.HealthStatusDto;
@@ -25,6 +26,6 @@ public class HealthCheckServiceImpl implements HealthCheckService {
             .status("active")
             .build();
 
-        return Mono.just(healthCheckMapper.map(healthStatus));
+        return Mono.just(healthCheckMapper.map(healthStatus, IpUtils.getIp()));
     }
 }

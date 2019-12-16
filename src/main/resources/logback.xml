@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="log.files.path" value="/var/log/bordozer/translator"/>
+    <property name="service.name" value="translator"/>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${log.files.path}/${service.name}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-7d{yyyy-MM-dd HH:mm:ss:SSS} %m%n</pattern>
+        </encoder>
+        <layout>
+            <Pattern>%-4r, %date{yyyy-MM-dd HH:mm:ss.SSS}, [%thread] %-5level, %logger{5} traceId="%X{traceId}", %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="WEB_REQUESTS_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${log.files.path}/${service.name}-web-requests.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-7d{yyyy-MM-dd HH:mm:ss:SSS} %m%n</pattern>
+        </encoder>
+        <layout>
+            <Pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} traceId="%X{traceId}", %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.bordozer.commons.web.RequestLogFilter" level="INFO" >
+        <appender-ref ref="WEB_REQUESTS_FILE" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

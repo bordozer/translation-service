@@ -1,22 +1,20 @@
 package com.bordozer.translator.controllers;
 
+import com.bordozer.commons.utils.LoggableJson;
+import com.bordozer.translator.dto.ModifiableTranslationDTO;
+import com.bordozer.translator.dto.TranslationDTO;
+import com.bordozer.translator.model.Language;
+import com.bordozer.translator.service.TranslatorService;
+import com.google.common.collect.Maps;
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.bordozer.translator.dto.ImmutableTranslationDTO;
-import com.bordozer.translator.dto.ModifiableTranslationDTO;
-import com.bordozer.translator.dto.TranslationDTO;
-import com.bordozer.translator.model.Language;
-import com.bordozer.translator.service.TranslatorService;
-import com.google.common.collect.Maps;
-
-import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
@@ -26,17 +24,16 @@ public class TranslatorRestController {
     private final TranslatorService translatorService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/translate/")
-    public ResponseEntity<TranslationDTO> translateMultiple(final ModifiableTranslationDTO translations,
-        final Language language) {
+    public ResponseEntity<TranslationDTO> translateMultiple(final ModifiableTranslationDTO translations, final Language language) {
         assert language != null;
-        log.info("Translate multiple, language: {}, nerds map: {}", language, translations);
+        log.info("Multiple translate request, language: {}, nerds map: {}", language, LoggableJson.of(translations));
 
         return new ResponseEntity<>(
-            new ImmutableTranslationDTO.Builder()
-                .translations(
-                    Maps.transformValues(translations.getTranslations(), nerd -> translateSingle(nerd, language))
-                )
-                .build(), getHttpHeaders(), HttpStatus.OK);
+                TranslationDTO.builder()
+                        .translations(
+                                Maps.transformValues(translations.getTranslations(), nerd -> translateSingle(nerd, language))
+                        )
+                        .build(), getHttpHeaders(), HttpStatus.OK);
     }
 
     @SneakyThrows

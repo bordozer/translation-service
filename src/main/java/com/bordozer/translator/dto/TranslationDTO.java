@@ -16,4 +16,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public interface TranslationDTO {
 
     Map<String, String> getTranslations();
+
+    static ImmutableTranslationDTO.Builder builder() {
+        return new ImmutableTranslationDTO.Builder();
+    }
 }
