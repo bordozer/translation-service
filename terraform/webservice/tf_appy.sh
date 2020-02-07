@@ -8,7 +8,7 @@ terraform -version
 
 terraform init
 
-terraform apply -var-file=env/${ENV}.tfvars -auto-approve
+terraform apply -var-file=env/${ENV}.tfvars  -auto-approve
 
 # terraform fmt
 # terraform validate

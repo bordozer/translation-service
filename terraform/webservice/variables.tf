@@ -9,9 +9,9 @@ variable "ec2_deployment_maximum_percent" { default = 100 }
 variable "ec2_deployment_minimum_healthy_percent" { default = 0 }
 variable "ec2_health_check_grace_period_seconds" { default = "60" }
 
-variable "s3_bucket" { default = "" } /* TODO */
-variable "s3_key" { default = "" } /* TODO */
-variable "kms_key_id" { default = "" } /* TODO */
+variable "remote_state_s3_bucket" {}
+variable "remote_state_s3_key" {}
+variable "remote_state_kms_key_id" { default = "d41d8cd98f00b204e9800998ecf8427e" } /* TODO */
 
 variable "docker_image_tag" { default = "latest" }
 variable "eureka_server_dns_name" { default = "" } /* TODO */
