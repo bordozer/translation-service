@@ -41,6 +41,9 @@ variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
 variable "app_container_mem_limit_mb" { default = 300 }
 variable "app_container_cpu_limit_units" { default = 200 }
 
+/* TODO: provide pub file as parameter */
+variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
+
 //variable "environment_name" {
 //  description = "Environment name to name and tag AWS resources (tag=environment)"
 //  default = "stage"

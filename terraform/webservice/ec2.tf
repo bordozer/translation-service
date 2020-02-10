@@ -9,10 +9,16 @@ resource "aws_instance" "translator-service" {
   }
 
   monitoring = false
-
   vpc_security_group_ids = ["${var.web_accessible_security_group_id}"]
   availability_zone = "${var.availability_zone}"
   subnet_id = "${lookup(var.subnets, var.availability_zone)}"
   associate_public_ip_address = true /* TODO: should be false, for test only */
   //  iam_instance_profile = ""
+
+  key_name = "${aws_key_pair.ssh_key.id}"
+}
+
+resource "aws_key_pair" "ssh_key" {
+  key_name = "vgn-pub-key"
+  public_key = file("${var.ssh_public_key_file_path}")
 }
