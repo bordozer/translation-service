@@ -7,7 +7,6 @@ resource "aws_instance" "translator-service" {
     volume_type = "${var.ec2_instance_root_volume_type}"
     volume_size = "${var.ec2_instance_root_volume_size}"
   }
-  ebs_optimized = true
 
   monitoring = false
 
@@ -16,7 +15,4 @@ resource "aws_instance" "translator-service" {
   subnet_id = "${lookup(var.subnets, var.availability_zone)}"
   associate_public_ip_address = true /* TODO: should be false, for test only */
   //  iam_instance_profile = ""
-  tags {
-    Name = "tf-${var.service_name}"
-  }
 }
