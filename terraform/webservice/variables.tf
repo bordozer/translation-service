@@ -1,7 +1,7 @@
 variable "service_name" {}
 variable "environment_name" {}
 
-variable "aws_region" { default = "us-east-2" }
+variable "aws_region" { default = "eu-west-3" }
 
 variable "ec2_service_desired_count" { default = 1 }
 variable "ec2_service_min_count" { default = 1 }

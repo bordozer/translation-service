@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER Borys Lukianov <bordozer@gmail.com>`
+MAINTAINER Borys Lukianov <bordozer@gmail.com>
 
 ADD build/libs/translation-service-1.1.jar rest-api.jar
 COPY src/main/resources/logback.xml /logback.xml

@@ -4,6 +4,11 @@ SERVICE_NAME="translator-service"
 
 # env: `stage` or `prod`
 ENV=$1
+if [ -z "$ENV" ]
+then
+      echo "ENV is empty. Provide 'stage' or 'prod'"
+      exit 1;
+fi
 
 # show terraform version
 terraform -version
