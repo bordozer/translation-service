@@ -1,7 +1,23 @@
 variable "service_name" {}
-variable "environment_name" {}
 
+variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
+variable "instance_type" { default = "t2.micro" }
+variable "ami_id" {
+  default = "ami-007fae589fdf6e955"
+  description = "Amazon Linux 2 AMI (HVM), SSD Volume Type (64-bit x86)"
+}
+variable "availability_zone" {
+  default = "eu-west-3a"
+  description = "Comma separated list of EC2 availability zones to launch instances."
+}
+variable "subnets" {
+  default = {
+    "eu-west-3a" = "subnet-08d6e761"
+    "eu-west-3b" = "subnet-f2d79f89"
+    "eu-west-3c" = "subnet-096bf644"
+  }
+}
 
 variable "ec2_service_desired_count" { default = 1 }
 variable "ec2_service_min_count" { default = 1 }
@@ -20,3 +36,8 @@ variable "eureka_server_dns_name" { default = "" } /* TODO */
 variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
 variable "app_container_mem_limit_mb" { default = 300 }
 variable "app_container_cpu_limit_units" { default = 200 }
+
+//variable "environment_name" {
+//  description = "Environment name to name and tag AWS resources (tag=environment)"
+//  default = "stage"
+//}
