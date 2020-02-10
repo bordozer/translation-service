@@ -18,6 +18,10 @@ variable "subnets" {
     "eu-west-3c" = "subnet-096bf644"
   }
 }
+variable "ec2_instance_root_volume_type" { default = "gp2" }
+variable "ec2_instance_root_volume_size" { default = "8" }
+
+variable "web_accessible_security_group_id" { default = "sg-0d0c134d8c2c1d221" }
 
 variable "ec2_service_desired_count" { default = 1 }
 variable "ec2_service_min_count" { default = 1 }
