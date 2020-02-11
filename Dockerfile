@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8u171-jdk
 MAINTAINER Borys Lukianov <bordozer@gmail.com>
 
 ADD build/libs/translation-service-1.1.jar rest-api.jar
