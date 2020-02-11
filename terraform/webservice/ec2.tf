@@ -16,6 +16,10 @@ resource "aws_instance" "translator-service" {
   //  iam_instance_profile = ""
 
   key_name = "${aws_key_pair.ssh_key.id}"
+
+  tags = {
+    Name = "${var.service_name}"
+  }
 }
 
 resource "aws_key_pair" "ssh_key" {
