@@ -1,4 +1,4 @@
-resource "aws_instance" "translator-service" {
+resource "aws_instance" "translator-service-ami-instance" {
 
   instance_type = "${var.instance_type}"
   ami = "${var.ami_id}"
