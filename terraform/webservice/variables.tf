@@ -1,4 +1,5 @@
 variable "service_name" {}
+variable "environment_name" {}
 
 variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
@@ -44,7 +45,7 @@ variable "app_container_cpu_limit_units" { default = 200 }
 /* TODO: provide pub file as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
-//variable "environment_name" {
-//  description = "Environment name to name and tag AWS resources (tag=environment)"
-//  default = "stage"
-//}
+variable rds_password {}
+variable rds_db_name {}
+
+variable "application_port" { default = 8977 }

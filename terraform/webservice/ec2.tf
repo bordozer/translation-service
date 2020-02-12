@@ -20,6 +20,10 @@ resource "aws_instance" "translator-service" {
   tags = {
     Name = "${var.service_name}"
   }
+
+  lifecycle {
+    create_before_destroy = false
+  }
 }
 
 resource "aws_key_pair" "ssh_key" {
