@@ -1,6 +1,8 @@
 spring:
   application:
       name: translator
+  profiles:
+    active: aws
 
 logging:
   level:
@@ -19,5 +21,12 @@ spring:
 
 server:
   port: 8977
+
+---
+spring:
+  profiles: aws
+
+server:
+  port: 80
 
 
