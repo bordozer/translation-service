@@ -38,7 +38,7 @@ resource "aws_iam_role_policy" "service-full-access-policy" {
 EOF
 }
 
-//resource "aws_iam_instance_profile" "instance_profile" {
-//  name = "tf-${var.service_name}-instance-profile"
-//  role = "${aws_iam_role.service_iam_role.name}"
-//}
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = "tf-${var.service_name}-instance-profile"
+  role = "${aws_iam_role.service_iam_role.name}"
+}
