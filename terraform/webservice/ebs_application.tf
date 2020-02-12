@@ -1,10 +1,9 @@
 resource "aws_elastic_beanstalk_application" "ebs-app" {
-  depends_on = ["aws_db_instance.rds-db"]
   name = "${var.service_name}-app"
-  description = "${var.service_name} backend"
+  description = "${var.service_name} application"
   appversion_lifecycle {
-    service_role = "arn:aws:iam::12345678932:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk"
-    max_count = 128
-    delete_source_from_s3 = false
+    service_role = "arn:aws:iam::899415655760:role/aws-elasticbeanstalk-service-role"
+    max_count = 3
+    delete_source_from_s3 = true
   }
 }

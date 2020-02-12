@@ -45,7 +45,4 @@ variable "app_container_cpu_limit_units" { default = 200 }
 /* TODO: provide pub file as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
-variable rds_password {}
-variable rds_db_name {}
-
 variable "application_port" { default = 8977 }

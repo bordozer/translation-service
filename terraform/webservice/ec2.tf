@@ -13,7 +13,7 @@ resource "aws_instance" "translator-service" {
   availability_zone = "${var.availability_zone}"
   subnet_id = "${lookup(var.subnets, var.availability_zone)}"
   associate_public_ip_address = true /* TODO: should be false, for test only */
-  //  iam_instance_profile = ""
+//  iam_instance_profile = "${aws_iam_instance_profile.instance_profile.id}"
 
   key_name = "${aws_key_pair.ssh_key.id}"
 
