@@ -18,12 +18,12 @@ resource "aws_iam_role" "service_iam_role" {
 EOF
 
   tags = {
-    tag-key = "Name-${var.service_name}"
+    Name = "${var.service_tag}"
   }
 }
 
 resource "aws_iam_role_policy" "service-full-access-policy" {
-  name = "aws-full-access"
+  name = "tf-aws-full-access"
   role = "${aws_iam_role.service_iam_role.id}"
   policy = <<EOF
 {

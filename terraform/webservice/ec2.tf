@@ -18,7 +18,7 @@ resource "aws_instance" "translator-service" {
   key_name = "${aws_key_pair.ssh_key.id}"
 
   tags = {
-    Name = "${var.service_name}"
+    Name = "${var.service_tag}"
   }
 
   lifecycle {

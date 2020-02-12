@@ -1,9 +1,9 @@
 resource "aws_elastic_beanstalk_environment" "ebs-env" {
   depends_on = ["aws_elastic_beanstalk_application_version.ebs-app-ver"]
   name = "tf-${var.service_name}-env"
+  cname_prefix = "tf-${var.service_name}-env"
   application = "${aws_elastic_beanstalk_application.ebs-app.name}"
   solution_stack_name = "64bit Amazon Linux 2018.03 v2.10.2 running Java 8 "
-  cname_prefix = "tf-${var.service_name}-env"
   version_label = "${aws_elastic_beanstalk_application_version.ebs-app-ver.name}"
 
   setting {

@@ -1,5 +1,5 @@
 resource "aws_elastic_beanstalk_application" "ebs-app" {
-  name = "${var.service_name}-app"
+  name = "tf-${var.service_name}-app"
   description = "${var.service_name} application"
   appversion_lifecycle {
     service_role = "arn:aws:iam::899415655760:role/aws-elasticbeanstalk-service-role"

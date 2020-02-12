@@ -1,4 +1,5 @@
 variable "service_name" {}
+variable "service_tag" {}
 variable "environment_name" {}
 
 variable "vpc" { default = "vpc-74c2c81d" }
@@ -22,7 +23,7 @@ variable "subnets" {
 variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
 
-variable "web_accessible_security_group_id" { default = "sg-0d0c134d8c2c1d221" }
+variable "web_accessible_security_group_id" { default = "sg-05f92c4bc92168c35" }
 
 variable "ec2_service_desired_count" { default = 1 }
 variable "ec2_service_min_count" { default = 1 }
