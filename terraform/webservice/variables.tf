@@ -23,8 +23,6 @@ variable "subnets" {
 variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
 
-variable "web_accessible_security_group_id" { default = "sg-05f92c4bc92168c35" }
-
 variable "ec2_service_desired_count" { default = 1 }
 variable "ec2_service_min_count" { default = 1 }
 variable "ec2_service_max_count" { default = 1 }
@@ -40,7 +38,7 @@ variable "artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
 variable "app_port" { default = 8977 }
-variable "app_protocol" { default = "http" }
+variable "app_protocol" { default = "HTTP" }
 variable "app_health_check_uri" { default = "/health-check" }
 variable "app_artefact_name" { default = "translation-service-1.2.jar" }
 

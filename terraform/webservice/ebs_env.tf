@@ -14,11 +14,17 @@ resource "aws_elastic_beanstalk_environment" "ebs-env" {
     value     = "${var.vpc}"
   }
 
-//  setting {
-//    namespace = "aws:ec2:vpc"
-//    name = "IamInstanceProfile"
-//    value = "${aws_iam_instance_profile.instance_profile.name}"
-//  }
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "Subnets"
+    value     = "${lookup(var.subnets, var.availability_zone)}"
+  }
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name = "IamInstanceProfile"
+    value = "${aws_iam_instance_profile.instance_profile.name}"
+  }
 
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"

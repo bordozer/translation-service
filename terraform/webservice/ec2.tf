@@ -9,7 +9,7 @@ resource "aws_instance" "ec2_instance" {
   }
 
   monitoring = false
-  vpc_security_group_ids = ["${var.web_accessible_security_group_id}"]
+  vpc_security_group_ids = ["${aws_security_group.ec2_sg.id}"]
   availability_zone = "${var.availability_zone}"
   subnet_id = "${lookup(var.subnets, var.availability_zone)}"
   associate_public_ip_address = true /* TODO: should be false, for test only */
