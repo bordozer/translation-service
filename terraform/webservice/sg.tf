@@ -43,10 +43,21 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
+/* SSH */
+resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
+  security_group_id = "${aws_security_group.ec2_sg.id}"
+  type            = "ingress"
+  from_port       = "22"
+  to_port         = "22"
+  protocol        = "ssh"
+  cidr_blocks     = "${var.white_ip}"
+}
+
+/* HTTP from ELB */
 resource "aws_security_group_rule" "ec2_sg_rule_http" {
   security_group_id = "${aws_security_group.ec2_sg.id}"
   type            = "ingress"
-  from_port       = 0
+  from_port       = "${var.app_port}"
   to_port         = "${var.app_port}"
   protocol        = "tcp"
   source_security_group_id = "${aws_security_group.elb_sg.id}"
