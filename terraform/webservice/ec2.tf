@@ -12,7 +12,7 @@ resource "aws_instance" "ec2_instance" {
   vpc_security_group_ids = ["${aws_security_group.ec2_sg.id}"]
   availability_zone = "${var.availability_zone}"
   subnet_id = "${lookup(var.subnets, var.availability_zone)}"
-  associate_public_ip_address = false
+  associate_public_ip_address = true
   iam_instance_profile = "${aws_iam_instance_profile.instance_profile.id}"
 
   key_name = "${aws_key_pair.ssh_key.id}"
@@ -20,6 +20,7 @@ resource "aws_instance" "ec2_instance" {
   lifecycle {
     create_before_destroy = false
   }
+  user_data = "${file("user_data.sh")}" /* TODO: initial tomcat installation */
 
   tags = {
     Name = "${var.service_tag}"

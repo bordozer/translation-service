@@ -37,7 +37,8 @@ variable "artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 /* TODO: provide pub file as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
-variable "app_port" { default = 8977 }
+variable "app_port" { default = 80 }
+//variable "app_port" { default = 8977 }
 variable "app_protocol" { default = "HTTP" }
 variable "app_health_check_uri" { default = "/health-check" }
 variable "app_artefact_name" { default = "translation-service-1.2.jar" }
@@ -46,4 +47,4 @@ variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
 variable "app_container_mem_limit_mb" { default = 300 }
 variable "app_container_cpu_limit_units" { default = 200 }
 
-variable "white_ip" { default = "31.43.149.170/32" } /* TODO:  */
+//variable "white_ip" { default = "31.43.149.170/32" } /* TODO:  */
