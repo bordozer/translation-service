@@ -1,5 +1,5 @@
-resource "aws_security_group" "ami_sg" {
-  name = "tf-${var.service_name}-sg"
+resource "aws_security_group" "ec2_sg" {
+  name = "tf-${var.service_name}-ec2-sg"
   description = "SG for EC2 instances which runs translator service"
 
   vpc_id = "${var.vpc}"
@@ -21,11 +21,11 @@ resource "aws_security_group" "ami_sg" {
   }
 }
 
-resource "aws_security_group_rule" "ami_sg_rule_http" {
-  security_group_id = "${aws_security_group.ami_sg.id}"
+resource "aws_security_group_rule" "ec2_sg_rule_http" {
+  security_group_id = "${aws_security_group.ec2_sg.id}"
   type            = "ingress"
-  from_port       = 80
-  to_port         = 80
+  from_port       = 0
+  to_port         = "${var.app_port}"
   protocol        = "tcp"
   source_security_group_id = "${aws_security_group.elb_sg.id}"
 }

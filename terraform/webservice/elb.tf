@@ -1,11 +1,9 @@
-variable "app_port" { default = "80" }
-variable "app_protocol" { default = "http" }
-variable "app_health_check_uri" { default = "/health-check" }
-
 resource "aws_elb" "elb" {
-  name = "tf-${var.service_name}"
+  name = "tf-${var.service_name}-elb"
 
-  instances = [ "${aws_instance.translator-service-ami-instance.id}" ]
+  instances = [ "${aws_instance.ec2_instance.id}" ]
+  cross_zone_load_balancing = true
+  idle_timeout = 120
   connection_draining = true
   connection_draining_timeout = 120
 
@@ -13,8 +11,8 @@ resource "aws_elb" "elb" {
     instance_port = "${var.app_port}"
     instance_protocol = "${var.app_protocol}"
 
-    lb_port = "${var.app_port}"
-    lb_protocol = "${var.app_protocol}"
+    lb_port = "80"
+    lb_protocol = "http"
   }
 
   health_check {
@@ -22,12 +20,16 @@ resource "aws_elb" "elb" {
     healthy_threshold = 2
     unhealthy_threshold = 3
     timeout = 2
-    interval = 30
+    interval = 60
   }
 
   internal = false
   subnets = ["${lookup(var.subnets, var.availability_zone)}"]
   security_groups = [ "${aws_security_group.elb_sg.id}" ]
+
+  tags = {
+    Name = "${var.service_tag}"
+  }
 }
 
 resource "aws_security_group" "elb_sg" {

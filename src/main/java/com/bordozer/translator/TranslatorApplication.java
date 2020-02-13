@@ -1,6 +1,5 @@
 package com.bordozer.translator;
 
-import com.bordozer.commons.web.CommonsWebConfig;
 import com.bordozer.commons.web.RequestIdFilter;
 import com.bordozer.commons.web.RequestLogFilter;
 import com.bordozer.commons.web.WebLogger;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @SpringBootApplication
 @Import(ApplicationConfiguration.class)
-public class TranslatorApplication {
+public class TranslatorApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(TranslatorApplication.class, args);

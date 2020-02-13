@@ -27,6 +27,6 @@ spring:
   profiles: aws
 
 server:
-  port: 80
+  port: 8977
 
 
