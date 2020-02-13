@@ -34,14 +34,11 @@ variable "ec2_health_check_grace_period_seconds" { default = "60" }
 
 variable "remote_state_s3_bucket" { default = "arn:aws:s3:::remote-state-bucket" }
 variable "remote_state_kms_key_id" { default = "arn:aws:s3:::elasticbeanstalk-us-west-2-899415655760" }
+variable "artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 
-variable "docker_image_tag" { default = "latest" }
-variable "docker_registry" { default = "" } /* TODO */
-variable "eureka_server_dns_name" { default = "" } /* TODO */
-
-variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
-variable "app_container_mem_limit_mb" { default = 300 }
-variable "app_container_cpu_limit_units" { default = 200 }
+//variable "docker_image_tag" { default = "latest" }
+//variable "docker_registry" { default = "" } /* TODO */
+//variable "eureka_server_dns_name" { default = "" } /* TODO */
 
 /* TODO: provide pub file as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
@@ -49,3 +46,8 @@ variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.
 variable "app_port" { default = 8977 }
 variable "app_protocol" { default = "http" }
 variable "app_health_check_uri" { default = "/health-check" }
+variable "app_artefact_name" { default = "translation-service-1.2.jar" }
+
+variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
+variable "app_container_mem_limit_mb" { default = 300 }
+variable "app_container_cpu_limit_units" { default = 200 }

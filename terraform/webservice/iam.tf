@@ -23,7 +23,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "service-full-access-policy" {
-  name = "tf-aws-full-access"
+  name = "tf-${var.service_name}-access-policy"
   role = "${aws_iam_role.service_iam_role.id}"
   policy = <<EOF
 {
