@@ -1,3 +1,25 @@
+resource "aws_security_group" "elb_sg" {
+  name = "tf-${var.service_name}-elb-sg"
+
+  vpc_id = "${var.vpc}"
+
+  # Regular HTTP access for sitecore instance
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [ "0.0.0.0/0" ]
+  }
+
+  # Access from ELB to everywhere
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = [ "0.0.0.0/0" ]
+  }
+}
+
 resource "aws_security_group" "ec2_sg" {
   name = "tf-${var.service_name}-ec2-sg"
   description = "SG for EC2 instances which runs translator service"
