@@ -27,12 +27,12 @@ resource "aws_security_group" "ec2_sg" {
   vpc_id = "${var.vpc}"
 
   # Access within this Security Group via TCP
-  ingress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
-    self = true
-  }
+//  ingress {
+//    from_port = 0
+//    to_port = 0
+//    protocol = "-1"
+//    self = true
+//  }
 
   # Egress connections to Internet from Security Group
   egress {
@@ -43,15 +43,15 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
-/* SSH */
-resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
-  security_group_id = "${aws_security_group.ec2_sg.id}"
-  type            = "ingress"
-  from_port       = "22"
-  to_port         = "22"
-  protocol        = "ssh"
-  cidr_blocks     = "${var.white_ip}"
-}
+/* TODO: add SSH rule */
+//resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
+//  security_group_id = "${aws_security_group.ec2_sg.id}"
+//  type            = "ingress"
+//  from_port       = "22"
+//  to_port         = "22"
+//  protocol        = "ssh"
+//  cidr_blocks     = [ "0.0.0.0/0" ]
+//}
 
 /* HTTP from ELB */
 resource "aws_security_group_rule" "ec2_sg_rule_http" {

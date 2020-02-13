@@ -11,7 +11,7 @@ resource "aws_elb" "elb" {
     instance_protocol = "${var.app_protocol}"
 
     lb_port = "80"
-    lb_protocol = "http"
+    lb_protocol = "HTTP"
   }
 
 //  health_check {

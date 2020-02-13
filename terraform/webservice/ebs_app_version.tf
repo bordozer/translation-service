@@ -1,7 +1,7 @@
 resource "aws_elastic_beanstalk_application_version" "ebs-app-ver" {
   depends_on = ["aws_elastic_beanstalk_application.ebs-app"]
   name = "tf-v1"
-  application = "tf-${aws_elastic_beanstalk_application.ebs-app.name}"
+  application = "${aws_elastic_beanstalk_application.ebs-app.name}"
   description = "${var.service_name} application version created by terraform"
   bucket = "${var.artefacts_s3_bucket}"
   key = "${var.app_artefact_name}"

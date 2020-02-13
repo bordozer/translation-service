@@ -1,7 +1,7 @@
 resource "aws_lb_target_group" "instance" {
   name     = "tf-${var.service_name}-tg"
   target_type = "instance"
-  protocol = "http"
+  protocol = "HTTP"
   port     = "${var.app_port}"
   vpc_id   = "${var.vpc}"
 
