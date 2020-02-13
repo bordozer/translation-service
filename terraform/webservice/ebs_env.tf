@@ -6,7 +6,6 @@ resource "aws_elastic_beanstalk_environment" "ebs-env" {
   cname_prefix = "${var.service_name}-env"
   tier = "WebServer"
   version_label = "${aws_elastic_beanstalk_application_version.ebs-app-ver.name}"
-//  instances = [ "${aws_instance.ec2_instance.id}" ]
 
   setting {
     namespace = "aws:ec2:vpc"
@@ -21,15 +20,28 @@ resource "aws_elastic_beanstalk_environment" "ebs-env" {
   }
 
   setting {
-    namespace = "aws:ec2:vpc"
+    namespace = "aws:autoscaling:launchconfiguration"
     name = "IamInstanceProfile"
-    value = "${aws_iam_instance_profile.instance_profile.name}"
+    value = "aws-elasticbeanstalk-ec2-role"
+//    value = "${aws_iam_instance_profile.instance_profile.name}"
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name = "SecurityGroups"
+    value = "${aws_security_group.ec2_sg.id}"
   }
 
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"
     name = "SERVER_PORT"
     value = "${var.app_port}"
+  }
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name = "AssociatePublicIpAddress"
+    value = "false"
   }
 
   tags = {
