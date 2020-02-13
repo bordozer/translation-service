@@ -17,12 +17,12 @@ resource "aws_instance" "ec2_instance" {
 
   key_name = "${aws_key_pair.ssh_key.id}"
 
-  tags = {
-    Name = "${var.service_tag}"
-  }
-
   lifecycle {
     create_before_destroy = false
+  }
+
+  tags = {
+    Name = "${var.service_tag}"
   }
 }
 
