@@ -6,7 +6,7 @@ resource "aws_elastic_beanstalk_environment" "ebs-env" {
   cname_prefix = "${var.service_name}-env"
   tier = "WebServer"
   version_label = "${aws_elastic_beanstalk_application_version.ebs-app-ver.name}"
-  instances = [ "${aws_instance.ec2_instance.id}" ]
+//  instances = [ "${aws_instance.ec2_instance.id}" ]
 
   setting {
     namespace = "aws:ec2:vpc"

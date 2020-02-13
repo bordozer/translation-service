@@ -1,12 +1,14 @@
 resource "aws_lb_target_group" "instance" {
-  name     = "tf-${var.service_name}-elb-tg"
+  name     = "tf-${var.service_name}-tg"
   target_type = "instance"
   protocol = "http"
   port     = "${var.app_port}"
   vpc_id   = "${var.vpc}"
 
   health_check {
-    target = "${var.app_protocol}:${var.app_port}${var.app_health_check_uri}"
+    protocol = "${var.app_protocol}"
+    port = "${var.app_port}"
+    path = "${var.app_health_check_uri}"
     healthy_threshold = 2
     unhealthy_threshold = 3
     timeout = 2
