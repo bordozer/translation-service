@@ -1,19 +1,24 @@
 #!/bin/bash
 
-EC2_USER='ec2-user' && \
-  EC2_HOST='ec2-52-47-77-217.eu-west-3.compute.amazonaws.com' \
+EC2_USER='ec2-user' \
+  && EC2_HOST='ec2-52-47-77-217.eu-west-3.compute.amazonaws.com' \
   && JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
   && AWS_KEY='aws-vgn-key-3.pem' \
   && APP_JAR_FILE_NAME='translation-service-1.2.jar'
 
-ssh-keyscan -H ${EC2_HOST} >> ~/.ssh/known_hosts
+#ssh-keyscan -H ${EC2_HOST} >> ~/.ssh/known_hosts
 #ssh-keyscan -t rsa,dsa HOST 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
 
 echo "-- Copy app jar to EC2 instance"
 scp \
-    -i ~/.ssh/aws/${AWS_KEY} \
-    ../build/libs/${APP_JAR_FILE_NAME} \
+    -i "$HOME/.ssh/aws/${AWS_KEY}" \
+    "../build/libs/${APP_JAR_FILE_NAME}" \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
+scp \
+    -i ~/.ssh/aws/aws-vgn-key-3.pem \
+    ../build/libs/translation-service-1.2.jar \
+    ec2-user@ec2-52-47-77-217.eu-west-3.compute.amazonaws.com:/home/ec2-user/
+
 
 echo "-- Copy Java 1.8 to EC2 instance"
 scp \
