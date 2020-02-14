@@ -21,28 +21,9 @@ scp \
     "./$JAVA_ARCH_FILE" \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
 
-echo "-- Logging to EC2 instance"
-ssh -i ~/.ssh/aws/${AWS_KEY} "${EC2_USER}@${EC2_HOST}"
+echo "-- Deploy app on EC2 instance"
+ssh root@${EC2_HOST} 'bash -s' < deploy_aws_ec2.sh ${JAVA_ARCH_FILE} ${APP_JAR_FILE_NAME}
 
-JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
-  && APP_JAR_FILE_NAME='translation-service-1.2.jar'
-
-echo "-- Configuring Java"
-tar xvzf $JAVA_ARCH_FILE
-mv jdk1.8.0_241 java8
-export JAVA_HOME=~/java8
-export PATH=$JAVA_HOME/bin:$PATH
-$JAVA_HOME/bin/java -version
-
-echo "-- Creating log dirs"
-sudo mkdir /var/log/bordozer/ \
-  && sudo chmod 777 . -R /var/log/bordozer/ \
-  && sudo mkdir /var/log/bordozer/translator/ \
-  && sudo chmod 777 . -R /var/log/bordozer/translator/
-
-echo "-- Deploy jar"
-#fuser -k 8977/tcp
-#kill -9 "$(lsof -t -i:8977)"
-$JAVA_HOME/bin/java -ea -Dspring.profiles.active=aws -jar ${APP_JAR_FILE_NAME}
+#ssh -i ~/.ssh/aws/${AWS_KEY} "${EC2_USER}@${EC2_HOST}"
 
 
