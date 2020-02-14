@@ -3,7 +3,7 @@
 EC2_USER='ec2-user' && \
   EC2_HOST='ec2-52-47-77-217.eu-west-3.compute.amazonaws.com' \
   && JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
-  && AWS_KEY='aws-vgn-key.pem' \
+  && AWS_KEY='aws-vgn-key-3.pem' \
   && APP_JAR_FILE_NAME='translation-service-1.2.jar'
 
 ssh-keyscan -H ${EC2_HOST} >> ~/.ssh/known_hosts

@@ -41,7 +41,7 @@ variable "ami_id" {
 variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
 
-variable "ssh_public_key_name" { default = "aws-vgn-key" }
+variable "ssh_public_key_name" { default = "aws-vgn-key-3" }
 /* TODO: provide pub file location as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws" }
 
