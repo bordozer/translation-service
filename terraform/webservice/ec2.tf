@@ -18,9 +18,9 @@ resource "aws_instance" "ec2_instance" {
   key_name = "${aws_key_pair.ssh_key.id}"
 
   lifecycle {
-    create_before_destroy = false
+    create_before_destroy = false /* TODO: Should be TRUE in prod */
   }
-  user_data = "${file("user_data.sh")}" /* TODO: initial tomcat installation */
+  user_data = "${file("user_data.sh")}"
 
   tags = {
     Name = var.service_tag

@@ -24,3 +24,16 @@ resource "aws_lb_listener" "front_end" {
     target_group_arn = "${aws_lb_target_group.lb_tg.arn}"
   }
 }
+
+/*resource "aws_cloudwatch_metric_alarm" "metric_alarm" {
+  alarm_name                = "tf-${var.service_name}-alarm"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
+  evaluation_periods        = "2"
+  metric_name               = "CPUUtilization"
+  namespace                 = "AWS/EC2"
+  period                    = "120"
+  statistic                 = "Average"
+  threshold                 = "80"
+  alarm_description         = "This metric monitors ec2 cpu utilization"
+  insufficient_data_actions = []
+}*/

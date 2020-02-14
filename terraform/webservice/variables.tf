@@ -45,10 +45,10 @@ variable "ec2_instance_root_volume_size" { default = "8" }
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
 /* Application parameters */
-variable "app_port" { default = 80 }
-variable "app_health_check_uri" { default = "/" }
-//variable "app_port" { default = 8977 }
-//variable "app_health_check_uri" { default = "/health-check" }
+//variable "app_port" { default = 80 }
+//variable "app_health_check_uri" { default = "/" }
+variable "app_port" { default = 8977 }
+variable "app_health_check_uri" { default = "/health-check" }
 variable "app_protocol" { default = "HTTP" }
 variable "app_artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 variable "app_artefact_name" { default = "translation-service-1.2.jar" }
