@@ -1,24 +1,30 @@
 #!/bin/bash
 
-EC2_USER='ec2-user'
-EC2_HOST='ec2-15-236-35-5.eu-west-3.compute.amazonaws.com'
-JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz'
+EC2_USER='ec2-user' && \
+  EC2_HOST='ec2-52-47-77-217.eu-west-3.compute.amazonaws.com' \
+  && JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
+  && AWS_KEY='aws-vgn-key.pem' \
+  && APP_JAR_FILE_NAME='translation-service-1.2.jar'
+
+ssh-keyscan -H ${EC2_HOST} >> ~/.ssh/known_hosts
+#ssh-keyscan -t rsa,dsa HOST 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
 
 echo "-- Copy app jar to EC2 instance"
-# TODO: autoadd to known hosts
 scp \
-    -i ~/.ssh/aws/vgn-pub-key.pem \
-    ../build/libs/translation-service-1.2.jar \
+    -i ~/.ssh/aws/${AWS_KEY} \
+    ../build/libs/${APP_JAR_FILE_NAME} \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
 
 echo "-- Copy Java 1.8 to EC2 instance"
 scp \
-    -i ~/.ssh/aws/vgn-pub-key.pem \
+    -i ~/.ssh/aws/${AWS_KEY} \
     ./$JAVA_ARCH_FILE \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
 
 echo "-- Logging to EC2 instance"
-ssh -i ~/.ssh/aws/vgn-pub-key.pem "${EC2_USER}@${EC2_HOST}"
+ssh -i ~/.ssh/aws/${AWS_KEY} "${EC2_USER}@${EC2_HOST}"
+
+JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz'
 
 echo "-- Configuring Java"
 tar xvzf $JAVA_ARCH_FILE
@@ -29,7 +35,7 @@ $JAVA_HOME/bin/java -version
 
 echo "-- Deploy jar"
 #fuser -k 8977/tcp
-kill -9 "$(lsof -t -i:8977)"
-$JAVA_HOME/bin/java -ea -Dspring.profiles.active=aws -jar translation-service-1.2.jar
+#kill -9 "$(lsof -t -i:8977)"
+$JAVA_HOME/bin/java -ea -Dspring.profiles.active=aws -jar ${APP_JAR_FILE_NAME}
 
 
