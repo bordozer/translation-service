@@ -1,5 +1,5 @@
-resource "aws_security_group" "elb_sg" {
-  name = "tf-${var.service_name}-elb-sg"
+resource "aws_security_group" "lb_sg" {
+  name = "tf-${var.service_name}-lb-sg"
 
   vpc_id = "${var.vpc}"
 
@@ -11,7 +11,7 @@ resource "aws_security_group" "elb_sg" {
     cidr_blocks = [ "0.0.0.0/0" ]
   }
 
-  # Access from ELB to everywhere
+  # Access from LB to everywhere
   egress {
     from_port = 0
     to_port = 0
@@ -20,7 +20,8 @@ resource "aws_security_group" "elb_sg" {
   }
 
   tags = {
-    Name = "${var.service_tag}"
+    Name = var.service_tag
+    Environment = var.environment_name
   }
 }
 
@@ -47,7 +48,8 @@ resource "aws_security_group" "ec2_sg" {
   }
 
   tags = {
-    Name = "${var.service_tag}"
+    Name = var.service_tag
+    Environment = var.environment_name
   }
 }
 
@@ -61,15 +63,15 @@ resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
   description       = "SSH access"
 }
 
-/* HTTP from ELB */
+/* HTTP from LB */
 resource "aws_security_group_rule" "ec2_sg_rule_http" {
   security_group_id = "${aws_security_group.ec2_sg.id}"
   type            = "ingress"
   from_port       = var.app_port
   to_port         = var.app_port
   protocol        = "tcp"
-  source_security_group_id = "${aws_security_group.elb_sg.id}"
-  description       = "ELB access"
+  source_security_group_id = "${aws_security_group.lb_sg.id}"
+  description       = "LB access"
 }
 
 /*

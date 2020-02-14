@@ -5,7 +5,23 @@ variable "environment_name" {}
 /* Amazon account network parameters */
 variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
-variable "availability_zone" {
+
+variable "availability_zones" {
+        default = [
+          "eu-west-3a",
+          "eu-west-3b",
+          "eu-west-3c"
+        ]
+}
+variable "subnets" {
+  default = [
+    "subnet-08d6e761",
+    "subnet-f2d79f89",
+    "subnet-096bf644"
+  ]
+}
+
+/*variable "availability_zone" {
   default = "eu-west-3a"
   description = "Comma separated list of EC2 availability zones to launch instances."
 }
@@ -15,7 +31,7 @@ variable "subnets" {
     "eu-west-3b" = "subnet-f2d79f89"
     "eu-west-3c" = "subnet-096bf644"
   }
-}
+}*/
 
 /* EC2 parameters */
 variable "instance_type" { default = "t2.micro" }
