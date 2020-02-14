@@ -24,5 +24,5 @@ resource "aws_lb_target_group" "lb_tg" {
 resource "aws_lb_target_group_attachment" "ec2_attach" {
   target_group_arn = "${aws_lb_target_group.lb_tg.arn}"
   target_id        = "${aws_instance.ec2_instance.id}"
-  port             = 80
+  port             = var.app_port
 }
