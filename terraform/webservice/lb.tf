@@ -8,11 +8,6 @@ resource "aws_lb" "front_end" {
   enable_cross_zone_load_balancing = true
   idle_timeout = 60
 
-  /*access_logs {
-    bucket  = "${aws_s3_bucket.lb_logs.bucket}"
-    enabled = false
-  }*/
-
   tags = {
     Name = var.service_tag
     Environment = var.environment_name

@@ -5,7 +5,6 @@ variable "environment_name" {}
 /* Amazon account network parameters */
 variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
-
 variable "availability_zones" {
         default = [
           "eu-west-3a",
