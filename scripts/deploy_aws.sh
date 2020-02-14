@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EC2_USER='ec2-user' \
-  && EC2_HOST='ec2-35-180-172-23.eu-west-3.compute.amazonaws.com' \
+  && EC2_HOST='ec2-15-188-145-26.eu-west-3.compute.amazonaws.com' \
   && JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
   && AWS_KEY='aws-vgn-key-3.pem' \
   && APP_JAR_FILE_NAME='translation-service-1.2.jar'
@@ -24,8 +24,8 @@ scp \
 echo "-- Logging to EC2 instance"
 ssh -i ~/.ssh/aws/${AWS_KEY} "${EC2_USER}@${EC2_HOST}"
 
-JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz'
-APP_JAR_FILE_NAME='translation-service-1.2.jar'
+JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
+  && APP_JAR_FILE_NAME='translation-service-1.2.jar'
 
 echo "-- Configuring Java"
 tar xvzf $JAVA_ARCH_FILE
@@ -35,10 +35,10 @@ export PATH=$JAVA_HOME/bin:$PATH
 $JAVA_HOME/bin/java -version
 
 echo "-- Creating log dirs"
-sudo mkdir /var/log/bordozer/
-sudo chmod 777 . -R /var/log/bordozer/
-sudo mkdir /var/log/bordozer/translator/
-sudo chmod 777 . -R /var/log/bordozer/translator/
+sudo mkdir /var/log/bordozer/ \
+  && sudo chmod 777 . -R /var/log/bordozer/ \
+  && sudo mkdir /var/log/bordozer/translator/ \
+  && sudo chmod 777 . -R /var/log/bordozer/translator/
 
 echo "-- Deploy jar"
 #fuser -k 8977/tcp
