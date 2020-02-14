@@ -14,14 +14,6 @@ resource "aws_elb" "elb" {
     lb_protocol = "HTTP"
   }
 
-//  health_check {
-//    target = "${var.app_protocol}:${var.app_port}${var.app_health_check_uri}"
-//    healthy_threshold = 2
-//    unhealthy_threshold = 3
-//    timeout = 2
-//    interval = 60
-//  }
-
   internal = false
   subnets = ["${lookup(var.subnets, var.availability_zone)}"]
   security_groups = [ "${aws_security_group.elb_sg.id}" ]

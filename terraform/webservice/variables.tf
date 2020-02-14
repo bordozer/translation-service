@@ -2,13 +2,9 @@ variable "service_name" {}
 variable "service_tag" {}
 variable "environment_name" {}
 
+/* Amazon account network parameters */
 variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
-variable "instance_type" { default = "t2.micro" }
-variable "ami_id" {
-  default = "ami-007fae589fdf6e955"
-  description = "Amazon Linux 2 AMI (HVM), SSD Volume Type (64-bit x86)"
-}
 variable "availability_zone" {
   default = "eu-west-3a"
   description = "Comma separated list of EC2 availability zones to launch instances."
@@ -20,31 +16,24 @@ variable "subnets" {
     "eu-west-3c" = "subnet-096bf644"
   }
 }
+
+/* EC2 parameters */
+variable "instance_type" { default = "t2.micro" }
+variable "ami_id" {
+  default = "ami-007fae589fdf6e955"
+  description = "Amazon Linux 2 AMI (HVM), SSD Volume Type (64-bit x86)"
+}
 variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
-
-variable "ec2_service_desired_count" { default = 1 }
-variable "ec2_service_min_count" { default = 1 }
-variable "ec2_service_max_count" { default = 1 }
-variable "ec2_deployment_maximum_percent" { default = 100 }
-variable "ec2_deployment_minimum_healthy_percent" { default = 0 }
-variable "ec2_health_check_grace_period_seconds" { default = "60" }
-
-variable "remote_state_s3_bucket" { default = "arn:aws:s3:::remote-state-bucket" }
-variable "remote_state_kms_key_id" { default = "arn:aws:s3:::elasticbeanstalk-us-west-2-899415655760" }
-variable "artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 
 /* TODO: provide pub file as parameter */
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
 
+/* Application parameters */
 variable "app_port" { default = 80 }
+variable "app_health_check_uri" { default = "/" }
 //variable "app_port" { default = 8977 }
+//variable "app_health_check_uri" { default = "/health-check" }
 variable "app_protocol" { default = "HTTP" }
-variable "app_health_check_uri" { default = "/health-check" }
+variable "app_artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
 variable "app_artefact_name" { default = "translation-service-1.2.jar" }
-
-variable "app_java_opts_mem" { default = "-Xmx512m -Xms512m" }
-variable "app_container_mem_limit_mb" { default = 300 }
-variable "app_container_cpu_limit_units" { default = 200 }
-
-//variable "white_ip" { default = "31.43.149.170/32" } /* TODO:  */

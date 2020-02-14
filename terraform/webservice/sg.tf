@@ -51,22 +51,43 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
-/* TODO: add SSH rule */
-//resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
-//  security_group_id = "${aws_security_group.ec2_sg.id}"
-//  type            = "ingress"
-//  from_port       = "22"
-//  to_port         = "22"
-//  protocol        = "SSH"
-//  cidr_blocks     = [ "0.0.0.0/0" ]
-//}
+resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
+  security_group_id = "${aws_security_group.ec2_sg.id}"
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  cidr_blocks       = [ "0.0.0.0/0" ]
+  description       = "SSH access"
+}
 
 /* HTTP from ELB */
 resource "aws_security_group_rule" "ec2_sg_rule_http" {
   security_group_id = "${aws_security_group.ec2_sg.id}"
   type            = "ingress"
-  from_port       = "${var.app_port}"
-  to_port         = "${var.app_port}"
+  from_port       = var.app_port
+  to_port         = var.app_port
   protocol        = "tcp"
   source_security_group_id = "${aws_security_group.elb_sg.id}"
+  description       = "ELB access"
 }
+
+/*
+// TODO
+https://github.com/joshuamkite/terraform-aws-ssh-bastion-service/blob/master/security_group.tf
+data "aws_subnet" "lb_subnets" {
+  count = length(var.subnets_lb)
+  id    = var.subnets_lb[count.index]
+}
+
+resource "aws_security_group_rule" "lb_healthcheck_in" {
+  security_group_id = aws_security_group.bastion_service.id
+  cidr_blocks       = data.aws_subnet.lb_subnets.*.cidr_block
+  from_port         = var.lb_healthcheck_port
+  to_port           = var.lb_healthcheck_port
+  protocol          = "tcp"
+  type              = "ingress"
+  description       = "access from load balancer CIDR ranges for healthchecks"
+}
+
+*/
