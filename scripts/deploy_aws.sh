@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EC2_USER='ec2-user' \
-  && EC2_HOST='ec2-52-47-77-217.eu-west-3.compute.amazonaws.com' \
+  && EC2_HOST='ec2-35-180-172-23.eu-west-3.compute.amazonaws.com' \
   && JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz' \
   && AWS_KEY='aws-vgn-key-3.pem' \
   && APP_JAR_FILE_NAME='translation-service-1.2.jar'
@@ -14,22 +14,18 @@ scp \
     -i "$HOME/.ssh/aws/${AWS_KEY}" \
     "../build/libs/${APP_JAR_FILE_NAME}" \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
-scp \
-    -i ~/.ssh/aws/aws-vgn-key-3.pem \
-    ../build/libs/translation-service-1.2.jar \
-    ec2-user@ec2-52-47-77-217.eu-west-3.compute.amazonaws.com:/home/ec2-user/
-
 
 echo "-- Copy Java 1.8 to EC2 instance"
 scp \
-    -i ~/.ssh/aws/${AWS_KEY} \
-    ./$JAVA_ARCH_FILE \
+    -i "$HOME/.ssh/aws/${AWS_KEY}" \
+    "./$JAVA_ARCH_FILE" \
     "${EC2_USER}@${EC2_HOST}:/home/${EC2_USER}/"
 
 echo "-- Logging to EC2 instance"
 ssh -i ~/.ssh/aws/${AWS_KEY} "${EC2_USER}@${EC2_HOST}"
 
 JAVA_ARCH_FILE='jdk-8u241-linux-x64.tar.gz'
+APP_JAR_FILE_NAME='translation-service-1.2.jar'
 
 echo "-- Configuring Java"
 tar xvzf $JAVA_ARCH_FILE
@@ -37,6 +33,12 @@ mv jdk1.8.0_241 java8
 export JAVA_HOME=~/java8
 export PATH=$JAVA_HOME/bin:$PATH
 $JAVA_HOME/bin/java -version
+
+echo "-- Creating log dirs"
+sudo mkdir /var/log/bordozer/
+sudo chmod 777 . -R /var/log/bordozer/
+sudo mkdir /var/log/bordozer/translator/
+sudo chmod 777 . -R /var/log/bordozer/translator/
 
 echo "-- Deploy jar"
 #fuser -k 8977/tcp

@@ -42,7 +42,7 @@ variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
 
 /* TODO: provide pub file as parameter */
-variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/vgn-pub-key.pub" }
+variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/aws-vgn-key-3.pub" }
 
 /* Application parameters */
 //variable "app_port" { default = 80 }
