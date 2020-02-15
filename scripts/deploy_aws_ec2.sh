@@ -11,10 +11,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 $JAVA_HOME/bin/java -version
 
 echo "-- Creating log dirs"
-sudo mkdir /var/log/bordozer/ \
-  && sudo chmod 777 . -R /var/log/bordozer/ \
-  && sudo mkdir /var/log/bordozer/translator/ \
-  && sudo chmod 777 . -R /var/log/bordozer/translator/
+sudo mkdir /var/log/bordozer/ && sudo chmod 777 . -R /var/log/bordozer/
+sudo mkdir /var/log/bordozer/translator/ && sudo chmod 777 . -R /var/log/bordozer/translator/
 
 echo "-- Deploy jar"
 #fuser -k 8977/tcp
