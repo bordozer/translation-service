@@ -1,5 +1,5 @@
 resource "aws_lb" "front_end" {
-  name = "tf-${var.service_name}-lb"
+  name = "tf-${var.service_instance_name}-lb"
   load_balancer_type = "application"
   subnets = var.subnets
   security_groups = [ "${aws_security_group.lb_sg.id}" ]
@@ -9,7 +9,7 @@ resource "aws_lb" "front_end" {
   idle_timeout = 60
 
   tags = {
-    Name = var.service_name
+    Name = var.service_instance_name
     Environment = var.environment_name
   }
 }

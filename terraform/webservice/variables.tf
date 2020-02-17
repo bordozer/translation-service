@@ -1,4 +1,6 @@
-variable "service_name" {}
+
+variable "service_name" { default = "translator-service" }
+variable "service_instance_name" {}
 variable "environment_name" {}
 
 /* Amazon account network parameters */

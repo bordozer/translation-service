@@ -1,5 +1,5 @@
 resource "aws_security_group" "lb_sg" {
-  name = "tf-${var.service_name}-lb-sg"
+  name = "tf-${var.service_instance_name}-lb-sg"
 
   vpc_id = "${var.vpc}"
 
@@ -20,13 +20,13 @@ resource "aws_security_group" "lb_sg" {
   }
 
   tags = {
-    Name = var.service_name
+    Name = var.service_instance_name
     Environment = var.environment_name
   }
 }
 
 resource "aws_security_group" "ec2_sg" {
-  name = "tf-${var.service_name}-ec2-sg"
+  name = "tf-${var.service_instance_name}-ec2-sg"
   description = "SG for EC2 instances which runs translator service"
 
   vpc_id = "${var.vpc}"
@@ -48,7 +48,7 @@ resource "aws_security_group" "ec2_sg" {
   }
 
   tags = {
-    Name = var.service_name
+    Name = var.service_instance_name
     Environment = var.environment_name
   }
 }

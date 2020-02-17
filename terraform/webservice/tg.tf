@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "lb_tg" {
-  name     = "tf-${var.service_name}-tg"
+  name     = "tf-${var.service_instance_name}-tg"
   target_type = "instance"
   protocol = "HTTP"
   port     = "${var.app_port}"
@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "lb_tg" {
   }
 
   tags = {
-    Name = var.service_name
+    Name = var.service_instance_name
     Environment = var.environment_name
   }
 }
