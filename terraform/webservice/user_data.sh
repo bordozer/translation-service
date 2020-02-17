@@ -15,4 +15,4 @@ java -version
 
 #sudo mkdir -p /var/log/bordozer/translator/ && sudo chmod 777 . -R /var/log/bordozer/translator/
 
-#export APP_SERVICE_NAME='translator-service'
+export APP_SERVICE_NAME='translator-service'
