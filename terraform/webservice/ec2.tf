@@ -23,7 +23,9 @@ resource "aws_instance" "ec2_instance" {
   user_data = "${file("user_data.sh")}"
 
   tags = {
-    Name = var.service_tag
+    Name = var.service_name
     Environment = var.environment_name
+    AppArtefactS3Bucket = var.app_artefacts_s3_bucket
+    AppArtefactFileName = "tf-${var.service_name}.jar"
   }
 }

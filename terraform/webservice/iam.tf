@@ -18,7 +18,7 @@ resource "aws_iam_role" "service_iam_role" {
 EOF
 
   tags = {
-    Name = var.service_tag
+    Name = var.service_name
     Environment = var.environment_name
   }
 }

@@ -9,7 +9,7 @@ resource "aws_lb" "front_end" {
   idle_timeout = 60
 
   tags = {
-    Name = var.service_tag
+    Name = var.service_name
     Environment = var.environment_name
   }
 }

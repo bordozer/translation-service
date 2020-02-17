@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "lb_tg" {
   }
 
   tags = {
-    Name = var.service_tag
+    Name = var.service_name
     Environment = var.environment_name
   }
 }

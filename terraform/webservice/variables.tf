@@ -1,5 +1,4 @@
 variable "service_name" {}
-variable "service_tag" {}
 variable "environment_name" {}
 
 /* Amazon account network parameters */
