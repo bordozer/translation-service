@@ -1,27 +1,55 @@
 pipeline {
 	agent any
 	stages {
-		stage("build") {
+		stage("Build & Unit tests") {
+            agent {
+                label 'master'
+            }
+
 			steps {
 				script {
 					echo "-----------------------------------------------------------------------------------------------"
 					echo "Build"
 					sh "./gradlew --version"
-					sh "./gradlew clean build -x check"
+					sh "./gradlew clean bootJar test"
 				}
 			}
+            post {
+                always {
+                    junit "**/test-results/test/*.xml"
+                }
+            }
 		}
-        stage("Unit tests") {
+
+		stage('Deploy to AWS STAGE env?') {
+            agent none
             steps {
-                script {
-                    echo "-----------------------------------------------------------------------------------------------"
-                    sh "./gradlew test"
+                timeout(time: 1, unit: 'HOURS') {
+                    input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
                 }
             }
         }
 
+        stage('Deploying to AWS STAGE env') {
+            agent {
+                label 'master'
+            }
+            steps {
+                ansiColor('xterm') {
+                    dir('terraform/webservice') {
+                        sh "sudo chmod +x tf.sh"
+                        sh './tf-test.sh stage'
+                    }
+                }
+            }
+        }
 	}
+
 	post {
+	    always {
+          deleteDir()
+        }
+
 		failure {
 			echo "-----------------------------------------------------------------------------------------------"
 			echo "-                                       FAILED                                                -"
@@ -31,9 +59,6 @@ pipeline {
 			echo "-----------------------------------------------------------------------------------------------"
             echo "-                                      SUCCESS                                                -"
             echo "-----------------------------------------------------------------------------------------------"
-		}
-		always {
-			junit 'build/test-results/test/*.xml'
 		}
 	}
 }
