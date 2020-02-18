@@ -19,7 +19,7 @@ ec2_service_instance_name=$(aws ec2 describe-tags --filters "Name=resource-id,Va
 
 # set ec2-user env vars
 {
-  echo "export 'PS1=\$(pwd):'"
+  echo "export 'PS1=\${whoami}@\$(pwd) $ '"
   echo ""
   echo "export EC2_INSTANCE_ID='$ec2_instance_id'"
   echo "export EC2_REGION='$ec2_region'"
@@ -49,5 +49,6 @@ service "${ec2_service_instance_name}" start
 # aws s3 cp "s3://artefacts-s3-bucket/tf-translator-service-stage.jar" "/opt/translator-service-stage"
 # chown springboot:springboot "/opt/translator-service-stage/tf-translator-service-stage.jar"
 # chmod 500 "/opt/translator-service-stage/tf-translator-service-stage.jar"
+# rm "/etc/init.d/translator-service-stage"
 # ln -s "/opt/translator-service-stage/tf-translator-service-stage.jar" "/etc/init.d/translator-service-stage"
 # service "translator-service-stage" start
