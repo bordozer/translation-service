@@ -4,7 +4,7 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
     }
 	stages {
-		stage("Build & Unit tests") {
+		/* stage("Build & Unit tests") {
             agent {
                 label 'master'
             }
@@ -19,10 +19,10 @@ pipeline {
 			}
             post {
                 always {
-                    junit "**/test-results/test/*.xml"
+                    junit "**//* test-results/test *//*.xml"
                 }
             }
-		}
+		} */
 
 stage('Deploy to Staging') {
             agent {
@@ -33,11 +33,9 @@ stage('Deploy to Staging') {
                 // Discard older builds
                 milestone ordinal: 2, label: 'Staging'
 
-                ansiColor('xterm') {
-                    dir('terraform/webservice') {
-                        sh "sudo chmod +x tf.sh"
-                        sh './tf-test.sh stage'
-                    }
+                dir('terraform/webservice') {
+                    sh "sudo chmod +x tf.sh"
+                    sh './tf-test.sh stage'
                 }
             }
         }
