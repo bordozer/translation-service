@@ -1,7 +1,7 @@
 FROM openjdk:8u171-jdk
 MAINTAINER Borys Lukianov <bordozer@gmail.com>
 
-ADD build/libs/translation-service-1.1.jar rest-api.jar
+ADD build/libs/translation-service.jar rest-api.jar
 COPY src/main/resources/logback.xml /logback.xml
 
 EXPOSE 8977
