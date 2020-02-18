@@ -24,6 +24,15 @@ pipeline {
             }
 		}
 
+        stage('Deploy to AWS STAGE env?') {
+            agent none
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
+                }
+            }
+        }
+
         stage('Deploy to Staging') {
             agent {
                 label 'master'
