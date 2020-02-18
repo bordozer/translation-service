@@ -35,8 +35,8 @@ pipeline {
                             [
                                 $class: 'BooleanParameterDefinition',
                                 defaultValue: false,
-                                description: 'If checkbox is checked, the deployment to AWS STAGE env will be done',
-                                name: 'Answer timeout is 1 hour, then deploying is going to be skipped'
+                                description: 'Answer timeout is 1 hour, then deploying is going to be skipped',
+                                name: 'If checkbox is checked, the deployment to AWS STAGE env will be done'
                             ]
                         ]
                     )
@@ -52,36 +52,14 @@ pipeline {
             steps {
                 milestone ordinal: 2, label: 'STAGE'
 
+                sh "terraform -version"
+
                 dir('terraform/webservice') {
                     sh "chmod +x tf_appy.sh"
                     sh './tf_appy.sh stage'
                 }
             }
         }
-		/* stage('Deploy to AWS STAGE env?') {
-            agent none
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
-//                     input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
-                    input message: "Approve deploy to AWS STAGE env?", ok: ‘Yes’
-                }
-            }
-        }
-
-        stage('Deploying to AWS STAGE env') {
-            agent {
-                label 'master'
-            }
-            steps {
-                milestone ordinal: 2, label: 'STAGE'
-                ansiColor('xterm') {
-                    dir('terraform/webservice') {
-                        sh "sudo chmod +x tf.sh"
-                        sh './tf-test.sh stage'
-                    }
-                }
-            }
-        } */
 	}
 
 	post {
