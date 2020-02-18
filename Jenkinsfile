@@ -28,11 +28,18 @@ pipeline {
             agent none
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-//                     input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
-                input(
-                    id: 'Proceed', message: 'Proceed with deployment to STAGE?', parameters: [
-                    [$class: 'BooleanParameterDefinition', defaultValue: false, description: '', name: 'Answer timeout is 1 hour, then deploying is going to be skipped']
-                ])
+                    input(
+                        id: 'Proceed',
+                        message: 'Proceed with deployment to STAGE?',
+                        parameters: [
+                            [
+                                $class: 'BooleanParameterDefinition',
+                                defaultValue: false,
+                                description: 'If checkbox is checked, the deployment to AWS STAGE env will be done',
+                                name: 'Answer timeout is 1 hour, then deploying is going to be skipped'
+                            ]
+                        ]
+                    )
                 }
             }
         }
@@ -46,8 +53,8 @@ pipeline {
                 milestone ordinal: 2, label: 'STAGE'
 
                 dir('terraform/webservice') {
-                    sh "chmod +x tf-test.sh"
-                    sh './tf-test.sh stage'
+                    sh "chmod +x tf_appy.sh"
+                    sh './tf_appy.sh stage'
                 }
             }
         }
