@@ -27,7 +27,7 @@ targetCompatibility = 1.8
 
 bootJar {
     baseName = 'translation-service'
-    version =  '1.2'
+//    version =  '1.2'
 }
 
 task unpack(type: Copy) {
