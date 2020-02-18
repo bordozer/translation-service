@@ -28,7 +28,8 @@ pipeline {
             agent none
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
+//                     input "Proceed with deployment to STAGE? Answer timeout is 1 hour, then deploying is going to be skipped"
+                    input message: "Approve deploy to AWS STAGE env?", ok: ‘Yes’
                 }
             }
         }
