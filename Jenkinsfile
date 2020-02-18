@@ -24,7 +24,24 @@ pipeline {
             }
 		}
 
-		stage('Deploy to AWS STAGE env?') {
+stage('Deploy to Staging') {
+            agent {
+                label 'master'
+            }
+
+            steps {
+                // Discard older builds
+                milestone ordinal: 2, label: 'Staging'
+
+                ansiColor('xterm') {
+                    dir('terraform/webservice') {
+                        sh "sudo chmod +x tf.sh"
+                        sh './tf-test.sh stage'
+                    }
+                }
+            }
+        }
+		/* stage('Deploy to AWS STAGE env?') {
             agent none
             steps {
                 timeout(time: 1, unit: 'HOURS') {
@@ -39,6 +56,7 @@ pipeline {
                 label 'master'
             }
             steps {
+                milestone ordinal: 2, label: 'STAGE'
                 ansiColor('xterm') {
                     dir('terraform/webservice') {
                         sh "sudo chmod +x tf.sh"
@@ -46,7 +64,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
 	}
 
 	post {
