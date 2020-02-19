@@ -41,8 +41,9 @@ pipeline {
                 label 'master'
             }
             steps {
-//                 sh "rm terraform_0.12.20_linux_amd64.zip  2> /dev/null"
-//                 sh "rm terraform  2> /dev/null"
+                sh "rm -f terraform_0.12.20_linux_amd64.zip"
+                sh "rm -R -f terraform"
+                sh "rm -R -f terra"
                 sh "wget https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip"
                 sh "unzip terraform_0.12.20_linux_amd64.zip"
                 sh "chmod +x terraform"
