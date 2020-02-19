@@ -1,5 +1,11 @@
 pipeline {
-	agent any
+	agent {
+        docker {
+            image 'hashicorp/terraform:latest'
+            label 'LINUX-SLAVE'
+            args  '--entrypoint="" -u root -v /opt/jenkins/.aws:/root/.aws'
+        }
+    }
 	options {
         timeout(time: 1, unit: 'HOURS')
     }
