@@ -21,18 +21,6 @@ variable "subnets" {
   ]
 }
 
-/*variable "availability_zone" {
-  default = "eu-west-3a"
-  description = "Comma separated list of EC2 availability zones to launch instances."
-}
-variable "subnets" {
-  default = {
-    "eu-west-3a" = "subnet-08d6e761"
-    "eu-west-3b" = "subnet-f2d79f89"
-    "eu-west-3c" = "subnet-096bf644"
-  }
-}*/
-
 /* EC2 parameters */
 variable "instance_type" { default = "t2.micro" }
 variable "ami_id" {
@@ -52,4 +40,4 @@ variable "app_port" { default = 8977 }
 variable "app_health_check_uri" { default = "/health-check" }
 variable "app_protocol" { default = "HTTP" }
 variable "app_artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
-variable "app_artefact_name" { default = "translation-service.jar" }
+variable "app_artefact_name" { default = "translator-service.jar" }
