@@ -3,6 +3,18 @@ pipeline {
 	options {
         timeout(time: 1, unit: 'HOURS')
     }
+    parameters {
+        booleanParam(
+            name: 'AWS_DEPLOY_STAGE',
+            defaultValue: false,
+            description: 'Deploy to AWS STAGE?'
+        )
+        booleanParam(
+            name: 'AWS_DEPLOY_PROD',
+            defaultValue: false,
+            description: 'Deploy to AWS PROD? For `master` branch only'
+        )
+    }
 	stages {
 		stage("Build & Unit tests") {
             agent {
@@ -24,40 +36,41 @@ pipeline {
             }
 		}
 
-        stage('Deploy to AWS STAGE env?') {
-            agent none
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
-                    input(
-                        id: 'Proceed',
-                        message: 'Proceed with deployment to STAGE?',
-                        parameters: [
-                            [
-                                $class: 'BooleanParameterDefinition',
-                                defaultValue: false,
-                                description: 'Answer timeout is 1 hour, then deploying is going to be skipped',
-                                name: 'If checkbox is checked, the deployment to AWS STAGE env will be done'
-                            ]
-                        ]
-                    )
-                }
-            }
-        }
-
-        stage('Deploy to Staging') {
+        stage('Deploying to STAGE') {
             agent {
                 label 'master'
+            }
+            when {
+                expression { AWS_DEPLOY_STAGE == "true" }
             }
 
             steps {
                 milestone ordinal: 2, label: 'STAGE'
-
-                sh "terraform -version"
-
-                dir('terraform/webservice') {
+                echo "-----------------------------------------------------------------------------------------------"
+                echo "---------                             Deploying to STAGE                              ---------"
+                echo "-----------------------------------------------------------------------------------------------"
+                /* dir('terraform/webservice') {
                     sh "chmod +x tf_appy.sh"
                     sh './tf_appy.sh stage'
-                }
+                } */
+            }
+        }
+
+        stage('Deploying to PROD (declarative yet)') {
+            agent {
+                label 'master'
+            }
+            when {
+                branch 'master'
+                expression { AWS_DEPLOY_PROD == "true" }
+                echo "-----------------------------------------------------------------------------------------------"
+                echo "---------                               Deploying to PROD                             ---------"
+                echo "-----------------------------------------------------------------------------------------------"
+            }
+
+            steps {
+                milestone ordinal: 2, label: 'PROD'
+                // TODO: deploy to PROD
             }
         }
 	}
