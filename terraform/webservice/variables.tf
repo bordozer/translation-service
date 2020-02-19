@@ -35,8 +35,6 @@ variable "ec2_instance_root_volume_size" { default = "8" }
 variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/aws-vgn-key-3.pub" }
 
 /* Application parameters */
-//variable "app_port" { default = 80 }
-//variable "app_health_check_uri" { default = "/" }
 variable "app_port" { default = 8977 }
 variable "app_health_check_uri" { default = "/health-check" }
 variable "app_protocol" { default = "HTTP" }

@@ -5,12 +5,12 @@ pipeline {
     }
     parameters {
         booleanParam(
-            name: 'AWS_DEPLOY_STAGE',
+            name: 'AWS_DEPLOY_TO_STAGING',
             defaultValue: false,
-            description: 'Deploy to AWS STAGE?'
+            description: 'Deploy to AWS STAGING?'
         )
         booleanParam(
-            name: 'AWS_DEPLOY_PROD',
+            name: 'AWS_DEPLOY_TO_PROD',
             defaultValue: false,
             description: 'Deploy to AWS PROD? For `master` branch only'
         )
@@ -36,25 +36,24 @@ pipeline {
             }
 		}
 
-        stage('Deploying to STAGE') {
+        stage('Deploying to STAGING') {
             agent {
                 label 'master'
             }
             when {
-                expression { AWS_DEPLOY_STAGE == "true" }
+                expression { AWS_DEPLOY_TO_STAGING == "true" }
             }
 
             steps {
-                sh "echo Deploying to STAGE"
+                sh "echo Deploying to STAGING"
                 withCredentials([
                         string(credentialsId: 'AWS_STAGE_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'),
                         string(credentialsId: 'AWS_STAGE_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY'),
                         string(credentialsId: 'AWS_STAGE_DEFAULT_REGION', variable: 'AWS_DEFAULT_REGION')
                 ]) {
-//                     sh "aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Instance:InstanceId,Subnet:SubnetId}'"
                     dir('terraform/webservice') {
                         sh "chmod +x tf_apply.sh"
-                        sh './tf_apply.sh stage'
+                        sh './tf_apply.sh staging'
                     }
                 }
             }
@@ -66,7 +65,7 @@ pipeline {
             }
             when {
                 branch 'master'
-                expression { AWS_DEPLOY_PROD == "true" }
+                expression { AWS_DEPLOY_TO_PROD == "true" }
             }
 
             steps {

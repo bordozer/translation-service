@@ -2,11 +2,11 @@
 
 SERVICE_NAME="translator-service"
 
-# env: `stage` or `prod`
+# env: `staging` or `prod`
 ENV=$1
 if [ -z "$ENV" ]
 then
-      echo "ENV is empty. Provide 'stage' or 'prod'"
+      echo "ENV is empty. Provide 'staging' or 'prod'"
       exit 1;
 fi
 

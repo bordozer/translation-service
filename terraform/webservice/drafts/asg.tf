@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "heavy" {
   min_elb_capacity          = 0 # 0 skips waiting for instances attached to the load balancer
   wait_for_capacity_timeout = "0m" # 0 disables wait for ASG capacity
   launch_configuration      = "${aws_launch_configuration.launch_conf.name}"
-//  load_balancers            = ["${aws_elb.heavy.name}"]
+  load_balancers            = ["${aws_elb.heavy.name}"]
 
   tag {
     key                 = "Name"

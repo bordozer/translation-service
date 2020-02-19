@@ -46,9 +46,9 @@ ln -s "${APP_DIR}/${ec2_app_artefact_name}" "/etc/init.d/${ec2_service_instance_
 chkconfig "${ec2_service_instance_name}" on
 service "${ec2_service_instance_name}" start
 
-# aws s3 cp "s3://artefacts-s3-bucket/tf-translator-service-stage.jar" "/opt/translator-service-stage"
-# chown springboot:springboot "/opt/translator-service-stage/tf-translator-service-stage.jar"
-# chmod 500 "/opt/translator-service-stage/tf-translator-service-stage.jar"
-# rm "/etc/init.d/translator-service-stage"
-# ln -s "/opt/translator-service-stage/tf-translator-service-stage.jar" "/etc/init.d/translator-service-stage"
-# service "translator-service-stage" start
+# aws s3 cp "s3://artefacts-s3-bucket/tf-translator-service-staging.jar" "/opt/translator-service-staging"
+# chown springboot:springboot "/opt/translator-service-staging/tf-translator-service-staging.jar"
+# chmod 500 "/opt/translator-service-staging/tf-translator-service-staging.jar"
+# rm "/etc/init.d/translator-service-staging"
+# ln -s "/opt/translator-service-staging/tf-translator-service-staging.jar" "/etc/init.d/translator-service-staging"
+# service "translator-service-staging" start
