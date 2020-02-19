@@ -2,6 +2,7 @@
 variable "service_name" { default = "translator-service" }
 variable "service_instance_name" {}
 variable "environment_name" {}
+variable "ssh_public_key_file_name" {}
 variable "internal_lb_scheme" {}
 
 /* Amazon account network parameters */
@@ -30,9 +31,6 @@ variable "ami_id" {
 }
 variable "ec2_instance_root_volume_type" { default = "gp2" }
 variable "ec2_instance_root_volume_size" { default = "8" }
-
-/* TODO: provide pub file as parameter */
-variable "ssh_public_key_file_path" { default = "/home/blu/.ssh/aws/aws-vgn-key-3.pub" }
 
 /* Application parameters */
 variable "app_port" { default = 8977 }
