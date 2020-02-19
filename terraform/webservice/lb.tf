@@ -8,6 +8,9 @@ resource "aws_lb" "front_end" {
   enable_cross_zone_load_balancing = true
   idle_timeout = 60
 
+//  dns_name = var.domain
+//  zone_id = var.route53_zone_id
+
   tags = {
     Name = var.service_instance_name
     Environment = var.environment_name

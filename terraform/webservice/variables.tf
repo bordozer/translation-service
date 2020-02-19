@@ -22,6 +22,8 @@ variable "subnets" {
     "subnet-096bf644"
   ]
 }
+variable "route53_zone_id" { default = "ZYQ37WWIE7SAZ" }
+//variable "domain" { default = "visual-guitar.org" }
 
 /* EC2 parameters */
 variable "instance_type" { default = "t2.micro" }
