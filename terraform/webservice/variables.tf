@@ -3,7 +3,6 @@ variable "service_name" { default = "translator-service" }
 variable "service_instance_name" {}
 variable "environment_name" {}
 variable "internal_lb_scheme" {}
-variable "create_before_destroy" {}
 
 /* Amazon account network parameters */
 variable "vpc" { default = "vpc-74c2c81d" }

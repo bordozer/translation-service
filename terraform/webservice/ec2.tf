@@ -18,7 +18,7 @@ resource "aws_instance" "ec2_instance" {
   key_name = "${aws_key_pair.ssh_key.id}"
 
   lifecycle {
-    create_before_destroy = var.create_before_destroy
+    create_before_destroy = false
   }
   user_data = "${file("user_data.sh")}"
 
