@@ -41,11 +41,13 @@ pipeline {
                 label 'master'
             }
             steps {
+                sh "rm terraform_0.12.20_linux_amd64.zip  2> /dev/null"
+                sh "rm terra  2> /dev/null"
                 sh "wget https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip"
                 sh "unzip terraform_0.12.20_linux_amd64.zip"
-                sh "mkdir -p ./terra"
-                sh "cp terraform ./terra"
-                sh "PATH=$PATH:./terra"
+//                 sh "mkdir -p ./terra"
+//                 sh "cp terraform ./terra"
+//                 sh "PATH=$PATH:./terra"
             }
 		}
 
