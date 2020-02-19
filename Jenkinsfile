@@ -36,7 +36,7 @@ pipeline {
             }
 		}
 
- 		stage('Getting Terraform') {
+ 		/* stage('Getting Terraform') {
             agent {
                 label 'master'
             }
@@ -49,7 +49,7 @@ pipeline {
                 sh "chmod +x terraform"
                 sh "cp -f terraform /usr/local/bin"
             }
-		}
+		} */
 
         stage('Deploying to STAGING') {
             agent {
