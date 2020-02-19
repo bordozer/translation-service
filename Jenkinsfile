@@ -36,7 +36,7 @@ pipeline {
             }
 		}
 
-		stage('Getting Terraform') {
+/* 		stage('Getting Terraform') {
             agent {
                 label 'master'
             }
@@ -51,7 +51,7 @@ pipeline {
                 sh "cp terraform ./terra"
                 sh "PATH=$PATH:./terra"
             }
-		}
+		} */
 
         stage('Deploying to STAGING') {
             agent {
