@@ -47,8 +47,8 @@ pipeline {
             steps {
                 sh "echo Deploying to STAGE"
                 dir('terraform/webservice') {
-                    sh "chmod +x tf_appy.sh"
-                    sh './tf_appy.sh stage'
+                    sh "chmod +x tf_apply.sh"
+                    sh './tf_apply.sh stage'
                 }
             }
         }
