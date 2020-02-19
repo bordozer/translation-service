@@ -45,14 +45,11 @@ pipeline {
             }
 
             steps {
-                milestone ordinal: 2, label: 'STAGE'
-                echo "-----------------------------------------------------------------------------------------------"
-                echo "---------                             Deploying to STAGE                              ---------"
-                echo "-----------------------------------------------------------------------------------------------"
-                /* dir('terraform/webservice') {
+                sh "echo Deploying to STAGE"
+                dir('terraform/webservice') {
                     sh "chmod +x tf_appy.sh"
                     sh './tf_appy.sh stage'
-                } */
+                }
             }
         }
 
@@ -63,13 +60,10 @@ pipeline {
             when {
                 branch 'master'
                 expression { AWS_DEPLOY_PROD == "true" }
-                echo "-----------------------------------------------------------------------------------------------"
-                echo "---------                               Deploying to PROD                             ---------"
-                echo "-----------------------------------------------------------------------------------------------"
             }
 
             steps {
-                milestone ordinal: 2, label: 'PROD'
+                sh "echo Deploying to PROD"
                 // TODO: deploy to PROD
             }
         }
