@@ -46,9 +46,16 @@ pipeline {
 
             steps {
                 sh "echo Deploying to STAGE"
-                dir('terraform/webservice') {
-                    sh "chmod +x tf_apply.sh"
-                    sh './tf_apply.sh stage'
+                withCredentials([
+                        string(credentialsId: 'AWS_STAGE_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'),
+                        string(credentialsId: 'AWS_STAGE_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY'),
+                        string(credentialsId: 'AWS_STAGE_DEFAULT_REGION', variable: 'AWS_DEFAULT_REGION')
+                ]) {
+//                     sh "aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Instance:InstanceId,Subnet:SubnetId}'"
+                    dir('terraform/webservice') {
+                        sh "chmod +x tf_apply.sh"
+                        sh './tf_apply.sh stage'
+                    }
                 }
             }
         }
