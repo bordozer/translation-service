@@ -18,6 +18,6 @@ resource "aws_autoscaling_group" "heavy" {
   }
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = var.create_before_destroy
   }
 }

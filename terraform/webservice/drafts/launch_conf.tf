@@ -13,6 +13,6 @@ resource "aws_launch_configuration" "launch_conf" {
   user_data = "${file("user_data.sh")}"
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = var.create_before_destroy
   }
 }
