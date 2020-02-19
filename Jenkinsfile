@@ -36,6 +36,19 @@ pipeline {
             }
 		}
 
+		stage('Getting Terraform') {
+            agent {
+                label 'master'
+            }
+            steps {
+                sh "wget https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip"
+                sh "unzip terraform_0.12.20_linux_amd64.zip"
+                sh "mkdir -p ./terra"
+                sh "cp terraform ./terra"
+                sh "PATH=$PATH:./terra"
+            }
+		}
+
         stage('Deploying to STAGING') {
             agent {
                 label 'master'
