@@ -51,7 +51,7 @@ pipeline {
             }
 		} */
 
-        stage('Deploying to STAGING') {
+        stage('Deploying to AWS STAGING') {
             agent {
                 label 'master'
             }
@@ -60,7 +60,7 @@ pipeline {
             }
 
             steps {
-                sh "echo Deploying to STAGING"
+                sh "echo Deploying to AWS STAGING"
                 withCredentials([
                         string(credentialsId: 'AWS_STAGE_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'),
                         string(credentialsId: 'AWS_STAGE_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY'),
@@ -74,7 +74,7 @@ pipeline {
             }
         }
 
-        stage('Deploying to PROD (declarative yet)') {
+        stage('Deploying to AWS PROD (declarative yet)') {
             agent {
                 label 'master'
             }
@@ -84,7 +84,7 @@ pipeline {
             }
 
             steps {
-                sh "echo Deploying to PROD"
+                sh "echo Deploying to AWS PROD"
                 // TODO: deploy to PROD
             }
         }
