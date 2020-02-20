@@ -1,40 +1,26 @@
 package com.bordozer.translator.mappers;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.bordozer.commons.utils.IpUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.bordozer.translator.dto.ModifiableHealthStatusDto;
+import com.bordozer.translator.mappers.impl.MapstructImplPackage;
+import com.bordozer.translator.model.Language;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.bordozer.translator.dto.ModifiableHealthStatusDto;
-import com.bordozer.translator.mappers.impl.MapstructImplPackage;
-import com.bordozer.translator.model.HealthStatus;
-import com.bordozer.translator.model.Language;
-import com.bordozer.translator.utils.DateTimeUtils;
+import java.time.LocalDateTime;
+import java.util.Map;
 
 @Mapper(config = MapstructImplPackage.class)
 public interface HealthCheckMapper {
 
-    @Mapping(target = "appName", constant = "Translation Service")
+    @Mapping(target = "appName", constant = "Translator Service")
     @Mapping(target = "time", expression = "java(now())")
-    @Mapping(target = "supportedLanguages", expression = "java(supportedLanguages())")
+    @Mapping(target = "statuses", source = "statuses")
     @Mapping(target = "ip", source = "ip.ip")
     @Mapping(target = "hostname", source = "ip.hostname")
-    ModifiableHealthStatusDto map(HealthStatus healthStatus, IpUtils.Ip ip);
+    ModifiableHealthStatusDto map(Map<Language, String> statuses, IpUtils.Ip ip);
 
     default LocalDateTime now() {
-        return DateTimeUtils.now();
-    }
-
-    default List<Language> supportedLanguages() {
-        return Arrays.stream(Language.values())
-            .filter(val -> !StringUtils.EMPTY.equals(val.getCountry()))
-            .sorted(Comparator.comparing(Language::getCode))
-            .collect(Collectors.toList());
+        return LocalDateTime.now();
     }
 }
