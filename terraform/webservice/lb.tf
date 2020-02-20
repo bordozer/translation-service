@@ -8,8 +8,11 @@ resource "aws_lb" "front_end" {
   enable_cross_zone_load_balancing = true
   idle_timeout = 60
 
-//  dns_name = var.domain
-//  zone_id = var.route53_zone_id
+  /*access_logs {
+    bucket = "${var.lb_access_logs_s3_bucket}"
+    prefix = "tf-${var.service_instance_name}-logs"
+    enabled = true
+  }*/
 
   tags = {
     Name = var.service_instance_name

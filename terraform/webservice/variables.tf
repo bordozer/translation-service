@@ -23,7 +23,7 @@ variable "subnets" {
   ]
 }
 variable "route53_zone_id" { default = "ZYQ37WWIE7SAZ" }
-//variable "domain" { default = "visual-guitar.org" }
+variable "lb_access_logs_s3_bucket" { default = "lb_access_logs" }
 
 /* EC2 parameters */
 variable "instance_type" { default = "t2.micro" }

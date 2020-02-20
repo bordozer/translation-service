@@ -1,6 +1,6 @@
 resource "aws_route53_record" "www" {
   zone_id = var.route53_zone_id
-  name    = var.environment_name
+  name    = var.service_instance_name
   type    = "A"
 
   alias {
@@ -9,11 +9,3 @@ resource "aws_route53_record" "www" {
     evaluate_target_health = true
   }
 }
-
-/*resource "aws_route53_record" "service_route" {
-  zone_id = var.route53_zone_id
-  name = var.domain
-  type = "CNAME"
-  ttl = "300"
-  records = [aws_lb.front_end.dns_name]
-}*/
