@@ -2,7 +2,7 @@
 variable "service_name" { default = "translator-service" }
 variable "service_instance_name" {}
 variable "environment_name" {}
-variable "ssh_public_key_file_name" {}
+variable "ssh_public_key" {}
 variable "internal_lb_scheme" {}
 
 /* Amazon account network parameters */
