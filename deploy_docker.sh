@@ -15,8 +15,8 @@ docker container run \
     --network=bordozer-network \
     --ip 192.168.0.10 \
     --publish 8978:8977 \
-    -v /var/log/bordozer/translator-service/staging/:/var/log/bordozer/translator-service/ \
-    --name translator.bordozer \
+    -v /var/log/bordozer/translator-service/staging/:/var/log/bordozer/"${DOCKER_SERVICE_NAME}"/ \
+    --name "${DOCKER_SERVICE_NAME}" \
     "${DOCKER_IMG_NAME}"
 
 #    --network=bordozer-network \
