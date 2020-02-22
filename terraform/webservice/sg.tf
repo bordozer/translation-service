@@ -1,5 +1,6 @@
 resource "aws_security_group" "lb_sg" {
   name = "tf-${var.service_instance_name}-lb-sg"
+  description = "EC2 ${var.service_instance_name} SG"
 
   vpc_id = "${var.vpc}"
 

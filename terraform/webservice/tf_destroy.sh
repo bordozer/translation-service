@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+SERVICE_NAME="translator"
 # env: `staging` or `prod`
 ENV=$1
 if [ -z "$ENV" ]
@@ -12,10 +13,13 @@ echo "=================================================="
 echo "Environment '${ENV}' is going to be destroyed!"
 echo "=================================================="
 
-read -r -p "Type 'Destroy ${ENV}' to proceed: " confirm
-if [ "${confirm}" = "Destroy ${ENV}" ]; then
-   terraform destroy -var-file=env/${ENV}.tfvars -auto-approve
+CONFIRM_STR="Destroy ${SERVICE_NAME}-${ENV}"
+
+read -r -p "Type '${CONFIRM_STR}' to proceed: " confirm
+if [ "${confirm}" = "${CONFIRM_STR}" ]; then
+   terraform destroy "-var-file=env/${ENV}.tfvars" -auto-approve
    echo "Environment '${ENV}' has been destroyed. R.I.P."
+   exit 0
 fi
 
 echo ""
