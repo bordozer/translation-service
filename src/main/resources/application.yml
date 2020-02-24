@@ -2,7 +2,7 @@ spring:
   application:
       name: translator
   profiles:
-    active: aws
+    active: dev
 
 logging:
   level:
@@ -17,14 +17,14 @@ application:
 
 ---
 spring:
-  profiles: local
+  profiles: dev
 
 server:
   port: 8977
 
 ---
 spring:
-  profiles: aws
+  profiles: aws-staging
 
 server:
   port: 8977
