@@ -1116,17 +1116,17 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Session has expired</nerd>
+		<ru><![CDATA[Сессия устарела]]></ru>
+		<ua><![CDATA[Сессiя стала занадно старою та не може бiльше]]></ua>
+		<en><![CDATA[Session has expired]]></en>
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Click OK to reload page, then log in again</nerd>
+		<ru><![CDATA[Нажмите OK чтобы перегрузить страницу и войти под своим эккаунтом опять]]></ru>
+		<ua><![CDATA[Натиснiть OK щоб перезавантажити сторiнку та увiйти знову у свiй обликовий запис]]></ua>
+		<en><![CDATA[Click OK to reload page, then log in again]]></en>
 	</translation>
 
 	<translation>
