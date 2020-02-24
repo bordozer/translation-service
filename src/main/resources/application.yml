@@ -24,6 +24,13 @@ server:
 
 ---
 spring:
+  profiles: docker
+
+server:
+  port: 8977
+
+---
+spring:
   profiles: aws-staging
 
 server:

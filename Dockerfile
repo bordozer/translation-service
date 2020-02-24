@@ -7,4 +7,4 @@ COPY src/main/resources/logback.xml /logback.xml
 EXPOSE 8977
 
 RUN bash -c 'touch /pegasus.jar'
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=local","-jar","/rest-api.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=docker","-jar","/rest-api.jar"]
