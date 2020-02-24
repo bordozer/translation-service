@@ -12,15 +12,15 @@ mkdir -p "/var/log/bordozer/${t_service_name}/"
 chmod 777 -R "/var/log/bordozer/${t_service_name}/"
 
 # Get app artefact
-echo "RUN_ARGS='--spring.profiles.active=aws-${t_env}'" >"${t_app_dir}/${t_app_artefact_name}.conf"
-aws s3 cp "s3://${t_app_artefact_s3_bucket}/${t_app_artefact_name}.jar" "${t_app_dir}/"
+echo "RUN_ARGS='--spring.profiles.active=aws-${t_env}'" >"${t_app_dir}/tf-${t_service_instance_name}.conf"
+aws s3 cp "s3://${t_app_artefact_s3_bucket}/tf-${t_service_instance_name}.jar" "${t_app_dir}/"
 
 useradd springboot
 chsh -s /sbin/nologin springboot
-chown springboot:springboot "${t_app_dir}/${t_app_artefact_name}.jar"
-chmod 500 "${t_app_dir}/${t_app_artefact_name}.jar"
+chown springboot:springboot "${t_app_dir}/tf-${t_service_instance_name}.jar"
+chmod 500 "${t_app_dir}/tf-${t_service_instance_name}.jar"
 
-ln -s "${t_app_dir}/${t_app_artefact_name}.jar" "/etc/init.d/${t_service_instance_name}"
+ln -s "${t_app_dir}/tf-${t_service_instance_name}.jar" "/etc/init.d/${t_service_instance_name}"
 
 chkconfig "${t_service_instance_name}" on
 service "${t_service_instance_name}" start
