@@ -11,9 +11,8 @@ resource "aws_lb" "front_end" {
 //  enable_deletion_protection = true
 
   access_logs {
-    bucket = aws_s3_bucket.app_log_bucket.arn
-//    bucket = "tf-${var.service_instance_name}-logs"
-    prefix = "${var.environment_name}-"
+    bucket = aws_s3_bucket.app_log_bucket.bucket
+    prefix = ""
     enabled = true
   }
 
