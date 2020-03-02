@@ -6,7 +6,7 @@ resource "aws_autoscaling_group" "service_asg" {
   desired_capacity          = 1
   max_size                  = 1
   health_check_grace_period = 360   # Time (in seconds) after instance comes into service before checking health
-  health_check_type         = "EC2" # ELB or EC2 /* TODO: set to ELB! */
+  health_check_type         = "ELB" # ELB or EC2
   min_elb_capacity          = 0
   wait_for_elb_capacity     = 0
   wait_for_capacity_timeout = 0
