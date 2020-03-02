@@ -29,18 +29,8 @@ resource "aws_instance" "ec2_instance" {
   }
 }
 
-resource "aws_iam_instance_profile" "instance_profile" {
-  name = "tf-${var.service_instance_name}-instance-profile"
-  role = aws_iam_role.service_iam_role.name
-}
-
-data "template_file" "ec2_userdata" {
-  template = file("user_data.sh")
-  vars = {
-    t_service_name = var.service_name
-    t_service_instance_name = var.service_instance_name
-    t_env = var.environment_name
-    t_app_dir = "/opt/${var.service_instance_name}"
-    t_app_artefact_s3_bucket = var.app_artefacts_s3_bucket
-  }
+resource "aws_lb_target_group_attachment" "ec2_attach" {
+  target_group_arn = aws_lb_target_group.lb_tg.arn
+  target_id        = aws_instance.ec2_instance.id
+  port             = var.app_port
 }

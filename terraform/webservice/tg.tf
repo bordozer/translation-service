@@ -15,15 +15,5 @@ resource "aws_lb_target_group" "lb_tg" {
     interval = 60
   }
 
-  tags = {
-    Name = var.service_instance_name
-    ServiceName = var.service_name
-    Environment = var.environment_name
-  }
-}
-
-resource "aws_lb_target_group_attachment" "ec2_attach" {
-  target_group_arn = aws_lb_target_group.lb_tg.arn
-  target_id        = aws_instance.ec2_instance.id
-  port             = var.app_port
+  tags = local.common_tags
 }
