@@ -10,9 +10,9 @@ resource "aws_autoscaling_group" "service_asg" {
   min_elb_capacity          = 0
   wait_for_elb_capacity     = 0
   wait_for_capacity_timeout = 0
+  default_cooldown          = 300
 
   launch_configuration      = aws_launch_configuration.launch_conf.name
-//  service_linked_role_arn   = aws_iam_role.service_iam_role.name
   target_group_arns         = [aws_lb_target_group.lb_tg.arn]
 
   lifecycle {

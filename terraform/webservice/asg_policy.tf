@@ -20,7 +20,7 @@ resource "aws_autoscaling_policy" "add_instance_policy" {
   name = "tf-${var.service_instance_name}-asg-add-instance-policy"
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
-  cooldown = 10 # The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start
+  cooldown = 300 # The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start
   autoscaling_group_name = aws_autoscaling_group.service_asg.name
   policy_type = "SimpleScaling"
 }
@@ -47,7 +47,7 @@ resource "aws_autoscaling_policy" "remove_instance_policy" {
   name = "tf-${var.service_instance_name}-asg-remove-instance-policy"
   scaling_adjustment = -1
   adjustment_type = "ChangeInCapacity"
-  cooldown = 10
+  cooldown = 180
   autoscaling_group_name = aws_autoscaling_group.service_asg.name
   policy_type = "SimpleScaling"
 }
