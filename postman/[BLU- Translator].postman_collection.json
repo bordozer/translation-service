@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "d366164b-fc8f-4ad0-8e87-79827a6c269f",
+		"name": "[BLU: Translator]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Translator: Health check",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c516943a-b0e8-4cc4-8cb8-f747d2f6deff",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "963c6fef-7baa-40f2-be92-4bd3e0169993",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}:{{apiPort}}/health-check",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translator: Translate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}:{{apiPort}}/translate/?language=UA&translations%5BbuiltFromTonicOnStringLabel%5D=Built%20from%20tonic%20on%20string&translations%5BshowChordLabel%5D=Show%20chord&translations%5BshowChordNotesLabel%5D=Show%20chord%20notes&_=1576233082946",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"translate",
+						""
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "UA"
+						},
+						{
+							"key": "translations%5BbuiltFromTonicOnStringLabel%5D",
+							"value": "Built%20from%20tonic%20on%20string"
+						},
+						{
+							"key": "translations%5BshowChordLabel%5D",
+							"value": "Show%20chord"
+						},
+						{
+							"key": "translations%5BshowChordNotesLabel%5D",
+							"value": "Show%20chord%20notes"
+						},
+						{
+							"key": "_",
+							"value": "1576233082946"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
