@@ -24,8 +24,8 @@ resource "aws_instance" "ec2_instance" {
 
   tags = {
     Name = var.service_instance_name
-    Environment = var.environment_name
     ServiceName = var.service_name
+    Environment = var.environment_name
   }
 }
 

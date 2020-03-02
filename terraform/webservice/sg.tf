@@ -22,6 +22,7 @@ resource "aws_security_group" "lb_sg" {
 
   tags = {
     Name = var.service_instance_name
+    ServiceName = var.service_name
     Environment = var.environment_name
   }
 }
@@ -50,6 +51,7 @@ resource "aws_security_group" "ec2_sg" {
 
   tags = {
     Name = var.service_instance_name
+    ServiceName = var.service_name
     Environment = var.environment_name
   }
 }
