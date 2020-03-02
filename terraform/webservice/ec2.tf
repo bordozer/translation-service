@@ -29,6 +29,11 @@ resource "aws_instance" "ec2_instance" {
   }
 }
 
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = "tf-${var.service_instance_name}-instance-profile"
+  role = aws_iam_role.service_iam_role.name
+}
+
 data "template_file" "ec2_userdata" {
   template = file("user_data.sh")
   vars = {
