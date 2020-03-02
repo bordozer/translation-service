@@ -24,7 +24,7 @@ EOF
   }
 }
 
-/*resource "aws_iam_role_policy" "service_full_access_policy" {
+resource "aws_iam_role_policy" "service_full_access_policy" {
   name = "tf-${var.service_instance_name}-access-policy"
   role = aws_iam_role.service_iam_role.id
   policy = <<EOF
@@ -38,4 +38,4 @@ EOF
   }]
 }
 EOF
-}*/
+}
