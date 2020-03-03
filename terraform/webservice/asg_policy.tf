@@ -12,8 +12,10 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_high" {
   }
   alarm_description = "Add instance if CPU Utilization is too high"
   alarm_actions = [
-    aws_autoscaling_policy.add_instance_policy.arn
+    aws_autoscaling_policy.add_instance_policy.arn,
+    aws_sns_topic.cpu_usage_is_very_high_sns_topic.arn
   ]
+//  ok_actions = [] // TODO
 }
 
 resource "aws_autoscaling_policy" "add_instance_policy" {

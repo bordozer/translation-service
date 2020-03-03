@@ -48,3 +48,6 @@ locals {
     Environment = var.environment_name
   }
 }
+
+# List of email addresses as a string (space separated)
+variable "alarm_notification_emails" { default = "bordozer@gmail.com" }
