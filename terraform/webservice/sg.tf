@@ -20,11 +20,7 @@ resource "aws_security_group" "lb_sg" {
     cidr_blocks = [ "0.0.0.0/0" ]
   }
 
-  tags = {
-    Name = var.service_instance_name
-    ServiceName = var.service_name
-    Environment = var.environment_name
-  }
+  tags = local.common_tags
 }
 
 resource "aws_security_group" "ec2_sg" {
@@ -49,11 +45,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = [ "0.0.0.0/0" ]
   }
 
-  tags = {
-    Name = var.service_instance_name
-    ServiceName = var.service_name
-    Environment = var.environment_name
-  }
+  tags = local.common_tags
 }
 
 resource "aws_security_group_rule" "ec2_sg_rule_ssh" {

@@ -17,11 +17,7 @@ resource "aws_iam_role" "service_iam_role" {
 }
 EOF
 
-  tags = {
-    Name = var.service_instance_name
-    ServiceName = var.service_name
-    Environment = var.environment_name
-  }
+  tags = local.common_tags
 }
 
 resource "aws_iam_role_policy" "service_full_access_policy" {

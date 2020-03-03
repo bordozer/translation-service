@@ -16,12 +16,7 @@ resource "aws_lb" "front_end" {
     enabled = true
   }*/
 
-  tags = {
-    Name = var.service_instance_name
-    ServiceName = var.service_name
-    Environment = var.environment_name
-    Description = "Translator API ALB"
-  }
+  tags = local.common_tags
 }
 
 resource "aws_lb_listener" "front_end" {

@@ -27,9 +27,5 @@ resource "aws_s3_bucket_object" "artefact_upload" {
 }
 EOF
 
-  tags = {
-    Name = var.service_instance_name
-    Environment = var.environment_name
-    ServiceName = var.service_name
-  }
+  tags = tags = local.common_tags
 }*/
