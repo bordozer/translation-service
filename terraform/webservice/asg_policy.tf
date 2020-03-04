@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_high" {
-  alarm_name = "tf-${var.service_instance_name}-CPU-too-high"
+  alarm_name = "tf-${var.service_instance_name}-CPU-is-too-high"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods = 3 # The number of periods over which data is compared to the specified threshold.
   metric_name = "CPUUtilization"
@@ -10,7 +10,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_high" {
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.service_asg.name
   }
-  alarm_description = "Add instance if CPU Utilization is too high"
+  alarm_description = "Add an instance if CPU Utilization is too high"
   alarm_actions = [
     aws_autoscaling_policy.scale_out_policy.arn,
     aws_sns_topic.asg_notifications.arn
@@ -25,7 +25,7 @@ resource "aws_autoscaling_policy" "scale_out_policy" {
   policy_type = "SimpleScaling"
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
-  cooldown = 300 # The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start
+  cooldown = 180 # The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start
   autoscaling_group_name = aws_autoscaling_group.service_asg.name
 }
 
@@ -41,7 +41,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_low" {
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.service_asg.name
   }
-  alarm_description = "Remove instance if CPU Utilization is too low"
+  alarm_description = "Remove an instance if CPU Utilization is too low"
   alarm_actions = [
     aws_autoscaling_policy.scale_in_policy.arn,
     aws_sns_topic.asg_notifications.arn

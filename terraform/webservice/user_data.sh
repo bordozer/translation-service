@@ -31,3 +31,6 @@ service "${t_service_instance_name}" start
 # sudo rm "/etc/init.d/translator-service-staging"
 # sudo ln -s "/opt/translator-service-staging/tf-translator-service-staging.jar" "/etc/init.d/translator-service-staging"
 # sudo service "translator-service-staging" start
+
+# sudo netstat -tulpn | grep 8977
+# sudo kill -9 <pid>
