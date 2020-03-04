@@ -42,13 +42,13 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_low" {
     AutoScalingGroupName = aws_autoscaling_group.service_asg.name
   }
   alarm_description = "Remove an instance if CPU Utilization is too low"
-  alarm_actions = [
+  /*alarm_actions = [
     aws_autoscaling_policy.scale_in_policy.arn,
     aws_sns_topic.asg_notifications.arn
   ]
   ok_actions = [
     aws_sns_topic.asg_notifications.arn
-  ]
+  ]*/
 }
 
 resource "aws_autoscaling_policy" "scale_in_policy" {

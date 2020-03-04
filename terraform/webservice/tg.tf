@@ -12,7 +12,7 @@ resource "aws_lb_target_group" "lb_tg" {
     healthy_threshold = 2
     unhealthy_threshold = 3
     timeout = 2
-    interval = 60
+    interval = 30
   }
 
   tags = local.common_tags

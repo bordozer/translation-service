@@ -6,6 +6,10 @@ yum install mc -y
 yum install java-1.8.0 -y
 yum install awscli -y
 
+{
+  echo "${t_cmd_format}"
+} >>"/home/ec2-user/.bashrc"
+
 # create log dirs
 mkdir "${t_app_dir}"
 mkdir -p "/var/log/bordozer/${t_service_name}/"
