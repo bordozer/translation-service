@@ -1,5 +1,5 @@
 // TODO: the issue: nesseccity to confirm email each time after topic creation
-resource "aws_sns_topic" "cpu_usage_is_very_high_sns_topic" {
+resource "aws_sns_topic" "cpu_usage_is_too_high_sns_topic" {
   name = "tf-${var.service_instance_name}-cpu-is-too-high-sns-topic"
 
   provisioner "local-exec" {

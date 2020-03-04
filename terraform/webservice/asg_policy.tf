@@ -12,19 +12,19 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_high" {
   }
   alarm_description = "Add instance if CPU Utilization is too high"
   alarm_actions = [
-    aws_autoscaling_policy.add_instance_policy.arn,
-    aws_sns_topic.cpu_usage_is_very_high_sns_topic.arn
+    aws_autoscaling_policy.scale_out_policy.arn,
+    aws_sns_topic.cpu_usage_is_too_high_sns_topic.arn
   ]
 //  ok_actions = [] // TODO
 }
 
-resource "aws_autoscaling_policy" "add_instance_policy" {
-  name = "tf-${var.service_instance_name}-asg-add-instance-policy"
+resource "aws_autoscaling_policy" "scale_out_policy" {
+  name = "tf-${var.service_instance_name}-asg-scale-out-policy"
+  policy_type = "SimpleScaling"
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
   cooldown = 300 # The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start
   autoscaling_group_name = aws_autoscaling_group.service_asg.name
-  policy_type = "SimpleScaling"
 }
 
 resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_low" {
@@ -41,17 +41,17 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_low" {
   }
   alarm_description = "Remove instance if CPU Utilization is too low"
   alarm_actions = [
-    aws_autoscaling_policy.remove_instance_policy.arn
+    aws_autoscaling_policy.scale_in_policy.arn
   ]
 }
 
-resource "aws_autoscaling_policy" "remove_instance_policy" {
-  name = "tf-${var.service_instance_name}-asg-remove-instance-policy"
+resource "aws_autoscaling_policy" "scale_in_policy" {
+  name = "tf-${var.service_instance_name}-asg-scale-in-policy"
+  policy_type = "SimpleScaling"
   scaling_adjustment = -1
   adjustment_type = "ChangeInCapacity"
   cooldown = 180
   autoscaling_group_name = aws_autoscaling_group.service_asg.name
-  policy_type = "SimpleScaling"
 }
 
 /*
