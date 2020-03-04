@@ -11,6 +11,6 @@ data "template_file" "ec2_userdata" {
     t_env = var.environment_name
     t_app_dir = "/opt/${var.service_instance_name}"
     t_app_artefact_s3_bucket = var.app_artefacts_s3_bucket
-    t_cmd_format = "export 'PS1=\u0024{whoami}@\u0024(pwd) $ '"
+    t_cmd_format = "export 'PS1=$${whoami}@$$(pwd) $ '"
   }
 }
