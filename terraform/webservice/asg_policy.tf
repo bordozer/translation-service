@@ -13,9 +13,11 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_high" {
   alarm_description = "Add instance if CPU Utilization is too high"
   alarm_actions = [
     aws_autoscaling_policy.scale_out_policy.arn,
-    aws_sns_topic.cpu_usage_is_too_high_sns_topic.arn
+    aws_sns_topic.asg_notifications.arn
   ]
-//  ok_actions = [] // TODO
+  ok_actions = [
+    aws_sns_topic.asg_notifications.arn
+  ]
 }
 
 resource "aws_autoscaling_policy" "scale_out_policy" {
@@ -41,7 +43,11 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_is_very_low" {
   }
   alarm_description = "Remove instance if CPU Utilization is too low"
   alarm_actions = [
-    aws_autoscaling_policy.scale_in_policy.arn
+    aws_autoscaling_policy.scale_in_policy.arn,
+    aws_sns_topic.asg_notifications.arn
+  ]
+  ok_actions = [
+    aws_sns_topic.asg_notifications.arn
   ]
 }
 

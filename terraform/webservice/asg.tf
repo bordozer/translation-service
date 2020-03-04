@@ -41,6 +41,21 @@ resource "aws_autoscaling_group" "service_asg" {
   }
 }
 
+resource "aws_autoscaling_notification" "asg_notifications" {
+  group_names = [
+    aws_autoscaling_group.service_asg.name
+  ]
+
+  notifications = [
+    "autoscaling:EC2_INSTANCE_LAUNCH",
+    "autoscaling:EC2_INSTANCE_TERMINATE",
+    "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+    "autoscaling:EC2_INSTANCE_TERMINATE_ERROR",
+  ]
+
+  topic_arn = aws_sns_topic.asg_notifications.arn
+}
+
 resource "aws_placement_group" "pgroup" {
   name     = "tf-${var.service_instance_name}-pg"
   strategy = "spread"

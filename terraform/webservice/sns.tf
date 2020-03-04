@@ -1,6 +1,6 @@
 // TODO: the issue: nesseccity to confirm email each time after topic creation
-resource "aws_sns_topic" "cpu_usage_is_too_high_sns_topic" {
-  name = "tf-${var.service_instance_name}-cpu-is-too-high-sns-topic"
+resource "aws_sns_topic" "asg_notifications" {
+  name = "tf-${var.service_instance_name}-asg-notifications-sns-topic"
 
   provisioner "local-exec" {
     command = "sh ./files/sns_subscription.sh"
