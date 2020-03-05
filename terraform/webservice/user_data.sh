@@ -10,8 +10,10 @@ yum install awscli -y
   echo "${t_cmd_format}"
 } >>"/home/ec2-user/.bashrc"
 
-# create log dirs
+# create app dirs
 mkdir "${t_app_dir}"
+chmod 777 "${t_app_dir}" -R
+# create log dirs
 mkdir -p "/var/log/bordozer/${t_service_name}/"
 chmod 777 -R "/var/log/bordozer/${t_service_name}/"
 

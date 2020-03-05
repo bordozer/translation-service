@@ -6,7 +6,6 @@ variable "ssh_public_key" {}
 variable "internal_lb_scheme" {}
 
 /* Amazon account network parameters */
-variable "accountId" { default = "009996457667" }
 variable "vpc" { default = "vpc-74c2c81d" }
 variable "aws_region" { default = "eu-west-3" }
 variable "availability_zones" {
