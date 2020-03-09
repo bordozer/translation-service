@@ -1,8 +1,8 @@
 resource "aws_security_group" "lb_sg" {
   name = "tf-${var.service_instance_name}-lb-sg"
-  description = "EC2 ${var.service_instance_name} SG"
+  description = "${var.service_instance_name} ALB SG"
 
-  vpc_id = "${var.vpc}"
+  vpc_id = var.vpc
 
   # Regular HTTP access for sitecore instance
   ingress {
@@ -25,9 +25,9 @@ resource "aws_security_group" "lb_sg" {
 
 resource "aws_security_group" "ec2_sg" {
   name = "tf-${var.service_instance_name}-ec2-sg"
-  description = "SG for EC2 instances which runs translator service"
+  description = "${var.service_instance_name} EC2 SG"
 
-  vpc_id = "${var.vpc}"
+  vpc_id = var.vpc
 
   # Access within this Security Group via TCP
 //  ingress {
@@ -49,7 +49,7 @@ resource "aws_security_group" "ec2_sg" {
 }
 
 resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
-  security_group_id = "${aws_security_group.ec2_sg.id}"
+  security_group_id = aws_security_group.ec2_sg.id
   type              = "ingress"
   from_port         = 22
   to_port           = 22
@@ -60,12 +60,12 @@ resource "aws_security_group_rule" "ec2_sg_rule_ssh" {
 
 /* HTTP from LB */
 resource "aws_security_group_rule" "ec2_sg_rule_http" {
-  security_group_id = "${aws_security_group.ec2_sg.id}"
+  security_group_id = aws_security_group.ec2_sg.id
   type            = "ingress"
   from_port       = var.app_port
   to_port         = var.app_port
   protocol        = "tcp"
-  source_security_group_id = "${aws_security_group.lb_sg.id}"
+  source_security_group_id = aws_security_group.lb_sg.id
   description       = "LB access"
 }
 
