@@ -419,7 +419,7 @@
 		<nerd>Neck sequences tab</nerd>
 		<ru><![CDATA[Гриф]]></ru>
 		<ua><![CDATA[Гриф]]></ua>
-		<en><![CDATA[The neck]]></en>
+		<en><![CDATA[Neck]]></en>
 	</translation>
 
 	<translation>
@@ -921,9 +921,16 @@
 
 	<translation>
 		<nerd>User UI language</nerd>
-		<ru><![CDATA[Язык]]></ru>
-		<ua><![CDATA[Мова]]></ua>
-		<en><![CDATA[Language]]></en>
+		<ru><![CDATA[Язык интерфейса]]></ru>
+		<ua><![CDATA[Мова iнтерфейсу]]></ua>
+		<en><![CDATA[UI language]]></en>
+	</translation>
+
+	<translation>
+		<nerd>Authentication error</nerd>
+		<ru><![CDATA[Ошибка авторизации]]></ru>
+		<ua><![CDATA[Помилка авторiзацiї]]></ua>
+		<en><![CDATA[Authentication error]]></en>
 	</translation>
 
 	<translation>
@@ -934,17 +941,17 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Ooops</nerd>
+		<ru><![CDATA[Ошибка]]></ru>
+		<ua><![CDATA[Помилка]]></ua>
+		<en><![CDATA[Ooops]]></en>
 	</translation>
 
 	<translation>
-		<nerd>Validation error</nerd>
-		<ru><![CDATA[Так не пойдет]]></ru>
-		<ua><![CDATA[Нi, це не дiло]]></ua>
-		<en><![CDATA[Validation error]]></en>
+		<nerd>Login name is busy</nerd>
+		<ru><![CDATA[Увы, этот логин уже занят]]></ru>
+		<ua><![CDATA[Нажаль, цей логiн вже зайнятий]]></ua>
+		<en><![CDATA[Sorry, the login name is busy]]></en>
 	</translation>
 
 	<translation>
@@ -1151,10 +1158,10 @@
 	</translation>
 
 	<translation>
-		<nerd></nerd>
-		<ru><![CDATA[]]></ru>
-		<ua><![CDATA[]]></ua>
-		<en><![CDATA[]]></en>
+		<nerd>Max field length</nerd>
+		<ru><![CDATA[Длина должна быть не более чем]]></ru>
+		<ua><![CDATA[Довжина повинна бути не бiльш нiж]]></ua>
+		<en><![CDATA[Max field length]]></en>
 	</translation>
 
 	<translation>
