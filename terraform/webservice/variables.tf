@@ -38,7 +38,6 @@ variable "app_port" { default = 8977 }
 variable "app_health_check_uri" { default = "/health-check" }
 variable "app_protocol" { default = "HTTP" }
 variable "app_artefacts_s3_bucket" { default = "artefacts-s3-bucket" }
-variable "app_artefact_name" { default = "translator-service.jar" }
 
 locals {
   common_tags = {
@@ -46,6 +45,7 @@ locals {
     ServiceName = var.service_name
     Environment = var.environment_name
   }
+  s3_app_artefact_name = "tf-${var.service_instance_name}"
 }
 
 # List of email addresses as a string (space separated)

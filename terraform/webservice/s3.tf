@@ -1,7 +1,7 @@
 resource "aws_s3_bucket_object" "artefact_upload" {
   bucket = var.app_artefacts_s3_bucket
-  key = "tf-${var.service_instance_name}.jar"
-  source = "../../build/libs/${var.app_artefact_name}"
+  key = "${local.s3_app_artefact_name}.jar"
+  source = "../../build/libs/${var.service_name}.jar"
 }
 
 // https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html
