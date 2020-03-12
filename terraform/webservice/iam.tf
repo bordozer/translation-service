@@ -25,13 +25,17 @@ resource "aws_iam_role_policy" "service_full_access_policy" {
   role = aws_iam_role.service_iam_role.id
   policy = <<EOF
 {
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": [
-      "*"
-    ],
-    "Resource": "*"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
 EOF
 }
