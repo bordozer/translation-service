@@ -31,7 +31,7 @@ public class TranslatorApplication extends SpringBootServletInitializer {
     @Bean
     @Order(1)
     public FilterRegistrationBean<RequestIdFilter> requestIdFilter() {
-        FilterRegistrationBean<RequestIdFilter> registrationBean = new FilterRegistrationBean<>();
+        final FilterRegistrationBean<RequestIdFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new RequestIdFilter());
         return registrationBean;
     }
@@ -44,7 +44,7 @@ public class TranslatorApplication extends SpringBootServletInitializer {
             @Value("${application.properties.logging.logRequest:true}") boolean logRequest,
             @Value("${application.properties.logging.logResponse:true}") boolean logResponse) {
 
-        FilterRegistrationBean<RequestLogFilter> registrationBean = new FilterRegistrationBean<>();
+        final FilterRegistrationBean<RequestLogFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new RequestLogFilter(logRequest, logResponse, webLogger));
         registrationBean.setUrlPatterns(requestLogUrls);
         return registrationBean;
