@@ -20,8 +20,8 @@ EOF
   tags = local.common_tags
 }
 
-resource "aws_iam_role_policy" "service_full_access_policy" {
-  name = "tf-${var.service_instance_name}-access-policy"
+resource "aws_iam_role_policy" "service_s3_access_policy" {
+  name = "tf-${var.service_instance_name}-role-policy"
   role = aws_iam_role.service_iam_role.id
   policy = <<EOF
 {
